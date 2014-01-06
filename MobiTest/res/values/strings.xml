@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobiTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="setting">설정</string>
+    <string name="id_search">아이디 찾기</string>
+    <string name="id_search_1">입력하신 정보와 일치하는 아이디 목록 입니다.</string>
+    <string name="notice">공지사항</string>
+    <string name="nickname">닉네임</string>
+    <string name="created_at">2013.08.08</string>
+    <string name="contents">산은 산이요, 물은 물이로다. 댓글 내용(최대 1000byte)</string>
+    <string name="redcard">신고</string>
+    <string name="count">99,999</string>
+    <string name="title">제목</string>
+
+</resources>

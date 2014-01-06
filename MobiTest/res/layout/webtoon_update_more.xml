@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303233"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/Page1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="278dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="17dp"
+            android:gravity="center_vertical"
+            android:text="업데이트 알림 받기"
+            android:textColor="#CCCCCC"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="278dp"
+            android:layout_height="35dp"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_below="@+id/textView1"
+            android:gravity="center_vertical"
+            android:text="관심웹툰 중 선택한 작품의 최신 회차가 업데이트 되었을 때 알림을 받을 수 있습니다."
+            android:textColor="#888888"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="25dp"
+            android:background="@null"
+            android:src="@drawable/set_chkbox" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/list_line" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="278dp"
+            android:layout_height="28dp"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="에티켓 시간 설정"
+            android:textColor="#CCCCCC"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="278dp"
+            android:layout_height="28dp"
+            android:layout_alignRight="@+id/textView3"
+            android:layout_below="@+id/textView3"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:text="설정한 시간 동안에는 알림을 받지 않습니다."
+            android:textColor="#888888"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/ImageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView4"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/list_line" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageButton"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/imageView"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="18dp"
+            android:background="@null"
+            android:src="@drawable/set_chkbox" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="278dp"
+            android:layout_height="28dp"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_below="@+id/ImageView2"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="팝업 알림"
+            android:textColor="#CCCCCC"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="278dp"
+            android:layout_height="18dp"
+            android:layout_alignLeft="@+id/textView5"
+            android:layout_below="@+id/textView5"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:text="알림이 도착 시 팝업창을 통해 알려줍니다."
+            android:textColor="#888888"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/ImageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageButton2"
+            android:layout_alignRight="@+id/imageButton2"
+            android:layout_below="@+id/ImageView2"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/textView6"
+            android:background="@null"
+            android:src="@drawable/set_chkbox" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView6"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/list_line" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Page2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/p2_textView1"
+            android:layout_width="278dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="17dp"
+            android:gravity="center_vertical"
+            android:text="업데이트 알림 받기"
+            android:textColor="#CCCCCC"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/p2_textView2"
+            android:layout_width="278dp"
+            android:layout_height="35dp"
+            android:layout_alignLeft="@+id/p2_textView1"
+            android:layout_below="@+id/p2_textView1"
+            android:gravity="center_vertical"
+            android:text="관심웹툰 중 선택한 작품의 최신 회차가 업데이트 되었을 때 알림을 받을 수 있습니다."
+            android:textColor="#888888"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/p2_imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="25dp"
+            android:background="@null"
+            android:src="@drawable/set_chkbox" />
+
+        <ImageView
+            android:id="@+id/p2_ImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/p2_textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/list_line" />
+
+        <TextView
+            android:id="@+id/p2_textView3"
+            android:layout_width="278dp"
+            android:layout_height="28dp"
+            android:layout_alignLeft="@+id/p2_textView2"
+            android:layout_below="@+id/p2_ImageView"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="에티켓 시간 설정"
+            android:textColor="#CCCCCC"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/p2_textView4"
+            android:layout_width="278dp"
+            android:layout_height="28dp"
+            android:layout_alignRight="@+id/p2_textView3"
+            android:layout_below="@+id/p2_textView3"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:text="설정한 시간 동안에는 알림을 받지 않습니다."
+            android:textColor="#888888"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/p2_textView5"
+            android:layout_width="157dp"
+            android:layout_height="22dp"
+            android:layout_below="@+id/p2_textView4"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="시작 시간"
+            android:textColor="#DDDDDD"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/p2_textView7"
+            android:layout_width="157dp"
+            android:layout_height="65dp"
+            android:layout_alignLeft="@+id/p2_textView5"
+            android:layout_below="@+id/p2_textView5"
+            android:background="@drawable/set_time_bg"
+            android:gravity="center_vertical"
+            android:padding="13sp"
+            android:text="오후 12:00"
+            android:textColor="#DDDDDD"
+            android:textSize="17sp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/p2_textView8"
+            android:layout_width="157dp"
+            android:layout_height="65dp"
+            android:layout_below="@+id/p2_textView5"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="17dp"
+            android:layout_toRightOf="@+id/p2_textView7"
+            android:background="@drawable/set_time_bg"
+            android:gravity="center_vertical"
+            android:padding="13sp"
+            android:text="오후 12:00"
+            android:textColor="#DDDDDD"
+            android:textSize="17sp" 
+            android:layout_marginBottom="12dp"/>
+
+        <ImageView
+            android:id="@+id/p2_ImageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/list_line" 
+            android:layout_below="@+id/p2_textView7"/>
+
+        <ImageButton
+            android:id="@+id/p2_imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/p2_imageButton"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/p2_ImageView"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="18dp"
+            android:background="@null"
+            android:src="@drawable/set_chkbox" />
+
+        <TextView
+            android:id="@+id/p2_textView9"
+            android:layout_width="278dp"
+            android:layout_height="28dp"
+            android:layout_alignLeft="@+id/p2_textView4"
+            android:layout_below="@+id/p2_ImageView2"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="팝업 알림"
+            android:textColor="#CCCCCC"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/p2_textView10"
+            android:layout_width="278dp"
+            android:layout_height="18dp"
+            android:layout_alignLeft="@+id/p2_textView5"
+            android:layout_below="@+id/p2_textView9"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:text="알림이 도착 시 팝업창을 통해 알려줍니다."
+            android:textColor="#888888"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/p2_ImageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/p2_imageButton2"
+            android:layout_alignRight="@+id/p2_imageButton2"
+            android:layout_below="@+id/p2_ImageView2"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/p2_textView6"
+            android:background="@null"
+            android:src="@drawable/set_chkbox" />
+
+
+        <TextView
+            android:id="@+id/p2_textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_above="@+id/p2_textView8"
+            android:layout_alignLeft="@+id/p2_textView8"
+            android:layout_alignRight="@+id/p2_textView8"
+            android:gravity="center_vertical"
+            android:text="종료 시간"
+            android:textColor="#DDDDDD"
+            android:textSize="13sp" />
+
+        
+        <ImageView
+            android:id="@+id/p2_ImageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/p2_ImageButton3"
+            android:src="@drawable/list_line" 
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+        
+    </RelativeLayout>
+
+</FrameLayout>

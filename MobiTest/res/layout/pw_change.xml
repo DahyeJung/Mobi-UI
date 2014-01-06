@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#28292a"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/edt_idpw_input"
+        android:gravity="center_vertical"
+        android:hint="기존 비밀번호"
+        android:paddingLeft="13dp"
+        android:textColor="#888888"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="5dp"
+        android:text="잘못된 비밀번호입니다."
+        android:textColor="#ef4358" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignRight="@+id/editText1"
+        android:layout_below="@+id/error"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/edt_idpw_input"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="새 비밀번호"
+        android:paddingLeft="13dp"
+        android:textColor="#888888"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/edt_idpw_input"
+        android:gravity="center_vertical"
+        android:hint="새 비밀번호 확인"
+        android:paddingLeft="13dp"
+        android:textColor="#888888"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#323334" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="121dp"
+            android:src="@drawable/login_line" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/login_btn_bg"
+            android:text="비밀번호 변경" 
+            android:scaleType="fitXY"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:adjustViewBounds="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

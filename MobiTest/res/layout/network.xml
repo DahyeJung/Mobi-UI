@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/login_line"
+        android:background="#28292a" >
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/login_line"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textdown"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="196dp"
+        android:src="@drawable/login_line" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="260dp"
+        android:layout_height="77dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="163dp"
+        android:src="@drawable/network_error_img" />
+    
+        <TextView
+            android:id="@+id/textup"
+            android:layout_width="260dp"
+            android:layout_height="33dp"
+            android:layout_alignLeft="@+id/textdown"
+            android:layout_alignRight="@+id/textdown"
+            android:layout_below="@id/imageView1"
+            android:layout_marginTop="13dp"
+            android:text="네트워크가 연결되지 않습니다."
+            android:textColor="#95E1E2"
+            android:textSize="20sp"
+            android:gravity="center" />
+
+        <TextView
+        android:id="@+id/textdown"
+        android:layout_width="326dp"
+        android:layout_height="22dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="네트워크 상태를 확인 후 다시 시도해 주십시오."
+        android:textColor="#DDDDDD"
+        android:textSize="15sp" 
+        android:layout_below="@id/textup"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/login_line"
+        android:background="#323334" >
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="105dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/network_error_btn"
+            android:text="취소"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/refresh"
+            android:layout_width="105dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/cancel"
+            android:background="@drawable/network_error_btn"
+            android:text="새로고침"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="105dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/refresh"
+            android:background="@drawable/network_error_btn"
+            android:text="저장웹툰"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

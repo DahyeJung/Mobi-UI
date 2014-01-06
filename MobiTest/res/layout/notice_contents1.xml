@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="267dp"
+        android:layout_alignBottom="@+id/imageView1"
+        android:background="#303233" />
+
+    <TextView
+        android:id="@+id/p1_textView1"
+        android:layout_width="490dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="10dp"
+        android:text="새로운 웹툰 서비스가 시작됩니다."
+        android:textSize="17sp" />
+    
+    <TextView
+        android:id="@+id/p1_textView2"
+        android:layout_width="82dp"
+        android:layout_height="18dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/p1_textView1"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:text="13.07.23" />
+    
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/p1_textView2"
+        android:layout_marginTop="13dp"
+        android:src="@drawable/list_line" />
+
+    <RelativeLayout
+        android:id="@+id/relative2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginTop="2dp"
+        android:background="#28292a" />
+
+    <TextView
+        android:id="@+id/p1_textView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@id/relative2"
+        android:layout_marginBottom="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="16dp"
+        android:text="새로운 웹툰 서비스가 시작됩니다!!!!"
+        android:textSize="15sp" />
+    
+</RelativeLayout>

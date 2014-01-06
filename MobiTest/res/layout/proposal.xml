@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="#28292A" >
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="238dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center|left"
+            android:text="huray"
+            android:textColor="#DDDDDD"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/id"
+            android:layout_marginRight="17dp"
+            android:gravity="center|right" >
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="17sp"
+                android:textColor="#DDDDDD" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/500"
+                android:textSize="17sp"
+                android:textColor="#888888" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:background="#DDDDDD" >
+
+        <EditText
+            android:id="@+id/contents"
+            android:layout_width="327dp"
+            android:layout_height="173dp"
+            android:layout_margin="17dp"
+            android:background="@null"
+            android:maxLength="500"
+            android:textSize="17sp"
+            android:textColor="#111111" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/picture"
+            android:layout_width="51dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/line"
+            android:layout_marginTop="14dp"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/query_btn_add_pic"
+            android:background="@null" />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="237dp"
+            android:layout_height="36dp"
+            android:layout_alignTop="@+id/picture"
+            android:layout_toRightOf="@id/picture"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="14dp"
+            android:text="오류사진을 보내주시면 문제 해결에 도움이 됩니다."
+            android:textColor="#888888"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/contents"
+            android:src="@drawable/list_line" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:background="#28292A" >
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8C8C8C" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="327dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_btn_bg"
+            android:text="보내기"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="40dp"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

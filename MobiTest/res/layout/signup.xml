@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#28292a"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/page1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <EditText
+            android:id="@+id/p1_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="33dp"
+            android:background="@drawable/login_input"
+            android:hint="ID"
+            android:paddingLeft="13dp"
+            android:textColor="#dddddd"
+            android:textSize="15sp" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/p1_pw"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/p1_id"
+            android:layout_alignRight="@+id/p1_id"
+            android:layout_below="@+id/p1_id"
+            android:layout_marginTop="33dp"
+            android:background="@drawable/login_input"
+            android:hint="Password (6자 이상)"
+            android:paddingLeft="13dp"
+            android:textColor="#dddddd"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/p1_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/p1_pw"
+            android:layout_alignRight="@+id/p1_pw"
+            android:layout_below="@+id/p1_pw"
+            android:layout_marginTop="33dp"
+            android:background="@drawable/login_input"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="13dp"
+            android:textColor="#dddddd"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/p1_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/p1_email"
+            android:layout_alignRight="@+id/p1_email"
+            android:layout_below="@+id/p1_email"
+            android:layout_marginTop="33dp"
+            android:background="@drawable/login_input"
+            android:hint="Nick name"
+            android:paddingLeft="13dp"
+            android:textColor="#dddddd"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:id="@+id/relative1"
+            android:layout_width="360dp"
+            android:layout_height="177dp"
+            android:layout_alignLeft="@+id/p1_nickname"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="#323334" >
+
+            <TextView
+                android:id="@+id/p1_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="29dp"
+                android:text="회원가입과 함께, 밀리언웹툰의 Terms of Service, Privacy Policy에 동의합니다."
+                android:textColor="#999999"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/p1_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/p1_tv1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/login_btn_bg"
+                android:text="계속"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/p1_logingline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/login_line" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/page2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/p2_signup_photo"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="19dp"
+            android:layout_marginTop="33dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/signup_photo" />
+
+        <Button
+            android:id="@+id/p2_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/p2_signup_photo"
+            android:layout_alignRight="@+id/p2_signup_photo"
+            android:layout_below="@+id/p2_signup_photo"
+            android:background="@drawable/signup_photo_edit"
+            android:text="편집"
+            android:textColor="#bbbbbb"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/p2_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/p2_signup_photo"
+            android:layout_marginBottom="17dp"
+            android:layout_toRightOf="@+id/p2_signup_photo"
+            android:gravity="left"
+            android:text="프로필 정보 등록"
+            android:textColor="#95e1e2"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/p2_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/p2_tv1"
+            android:layout_marginRight="17dp"
+            android:layout_toRightOf="@+id/p2_signup_photo"
+            android:gravity="left"
+            android:text="친구들이 당신을 손쉽게 발견할 수 있도록 하세요."
+            android:textColor="#dddddd"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/p2_boy"
+            android:layout_width="105dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/p2_button1"
+            android:layout_below="@+id/p2_button1"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/signup_profile"
+            android:text="남자"
+            android:textColor="#dddddd"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/p2_girl"
+            android:layout_width="105dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/p2_boy"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/p2_boy"
+            android:background="@drawable/signup_profile"
+            android:text="여자"
+            android:textColor="#dddddd"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/p2_boygirl"
+            android:layout_width="105dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/p2_girl"
+            android:layout_marginRight="17dp"
+            android:layout_toRightOf="@+id/p2_girl"
+            android:background="@drawable/signup_profile"
+            android:scaleType="fitXY"
+            android:textColor="#dddddd"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/p2_birth"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/p2_boy"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/signup_profile"
+            android:gravity="center|left"
+            android:paddingLeft="13dp"
+            android:text="생년월일 선택"
+            android:textColor="#dddddd"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/p2_birthBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignRight="@+id/p2_birth"
+            android:layout_alignTop="@+id/p2_birth"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="12dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:src="@drawable/filter_arrow" />
+
+        <TextView
+            android:id="@+id/p2_country"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/p2_birth"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/signup_profile"
+            android:gravity="center|left"
+            android:paddingLeft="13dp"
+            android:text="국가선택"
+            android:textColor="#dddddd"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/p2_countryBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignRight="@+id/p2_country"
+            android:layout_alignTop="@+id/p2_country"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="12dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:src="@drawable/filter_arrow" />
+
+        <TextView
+            android:id="@+id/p2_country2"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/p2_birth"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/p2_country"
+            android:background="@drawable/signup_profile"
+            android:gravity="center|left"
+            android:paddingLeft="13sp"
+            android:text="예 : 8212345678"
+            android:textColor="#888888"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:id="@+id/relative2"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="#323334" >
+
+            <TextView
+                android:id="@+id/p2_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="20dp"
+                android:text="건너뛰기"
+                android:textColor="#888888"
+                android:textSize="13dp" />
+
+            <Button
+                android:id="@+id/p2_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/p2_skip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/login_btn_bg"
+                android:text="가입하기"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/p2_logingline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/login_line" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/p2_boy"
+            android:layout_alignRight="@+id/p2_boy"
+            android:layout_marginBottom="13dp"
+            android:layout_marginRight="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/icon_boy" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignBottom="@+id/p2_girl"
+            android:layout_alignRight="@+id/p2_girl"
+            android:layout_marginBottom="13dp"
+            android:layout_marginRight="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/icon_girl" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignBottom="@+id/p2_boygirl"
+            android:layout_alignRight="@+id/p2_boygirl"
+            android:layout_marginBottom="13dp"
+            android:layout_marginRight="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/icon_boygirl" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/page3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/p3_tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="17dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="33dp"
+            android:text="이메일 인증이 완료되지 않았습니다."
+            android:textColor="#95e1e2"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/p4_tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="17dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="33dp"
+            android:text="인증코드가 일치하지 않습니다."
+            android:textColor="#95e1e2"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/p3_tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/p3_tv1"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:text="인증코드를 입력해 주십시오."
+            android:textColor="#dddddd"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/p4_tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/p4_tv1"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:text="다시한번 정확하게 입력해 주십시오."
+            android:textColor="#dddddd"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/p3_tv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/p3_tv2"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:text="인증코드를 메일함에서 확인해주십시오."
+            android:textColor="#888888"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/p3_tv4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/p3_tv3"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:text="인증코드가 없으면 인증메일 재발송을 클릭해 주십시오."
+            android:textColor="#888888"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/p3_code_input"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/p3_tv4"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/signup_profile"
+            android:hint="인증코드 입력"
+            android:paddingLeft="13dp"
+            android:textColor="#888888"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/p3_codeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/p3_code_input"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="17dp"
+            android:layout_toRightOf="@+id/p3_code_input"
+            android:adjustViewBounds="true"
+            android:background="@drawable/sign_up_code_btn"
+            android:gravity="center"
+            android:text="인증"
+            android:textColor="#ffffff"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/p3_code_input"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sign_up_textbox" />
+
+        <TextView
+            android:id="@+id/p3_tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView4"
+            android:layout_alignTop="@+id/imageView4"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="18dp"
+            android:text="메일 인증이 필요한 이유"
+            android:textColor="#888888"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/p3_tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/p3_tv5"
+            android:layout_below="@+id/p3_tv5"
+            android:layout_marginTop="7dp"
+            android:text="아이디/비밀번호 분실 시 확인"
+            android:textColor="#888888"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/p3_tv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/p3_tv6"
+            android:layout_below="@+id/p3_tv6"
+            android:layout_marginTop="7dp"
+            android:text="구매 정보의 확인"
+            android:textColor="#888888"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/p3_tv8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/p3_tv6"
+            android:layout_below="@+id/p3_tv7"
+            android:layout_marginTop="7dp"
+            android:text="타인에 의한 이메일 정보 도용 방지"
+            android:textColor="#888888"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_alignTop="@+id/p3_tv5"
+            android:layout_toLeftOf="@+id/p3_tv6"
+            android:src="@drawable/sign_up_bullet" />
+
+        <RelativeLayout
+            android:id="@+id/relative3"
+            android:layout_width="360dp"
+            android:layout_height="177dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="#323334" >
+
+            <Button
+                android:id="@+id/p3_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="17dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/login_btn_bg"
+                android:text="인증메일 재발송"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/p3_login"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@+id/p3_mail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="17dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/login_btn_bg"
+                android:text="로그인"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/p4_login"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@+id/p3_mail"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/login_btn_bg"
+                android:text="다시 가입하기"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ImageView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/login_line" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>
