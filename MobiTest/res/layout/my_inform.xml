@@ -210,7 +210,7 @@
                 android:id="@+id/button2"
                 android:layout_width="51dp"
                 android:layout_height="28dp"
-                android:background="@drawable/btn_my_info_edit"
+                android:background="@drawable/myinfo_btn"
                 android:text="변경"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
@@ -245,7 +245,7 @@
                 android:id="@+id/button3"
                 android:layout_width="51dp"
                 android:layout_height="28dp"
-                android:background="@drawable/btn_my_info_edit"
+                android:background="@drawable/myinfo_btn"
                 android:text="변경"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
@@ -266,7 +266,8 @@
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:scaleType="fitXY"
-            android:background="@drawable/btn_my_info_edit"
+            android:background="@drawable/myinfo_btn"
+            android:id="@+id/login"
             android:layout_marginLeft="17dp"
             android:layout_marginRight="17dp"
             />

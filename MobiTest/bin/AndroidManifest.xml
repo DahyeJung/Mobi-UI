@@ -30,27 +30,27 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.mobitest.Proposal"
+            android:name="com.example.mobitest.setting.Proposal"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.mobitest.IdSearch"
+            android:name="com.example.mobitest.login.IdSearch"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.mobitest.PwSearch"
+            android:name="com.example.mobitest.login.PwSearch"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.mobitest.Login"
+            android:name="com.example.mobitest.login.Login"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.mobitest.Signup"
+            android:name="com.example.mobitest.login.Signup"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
@@ -73,6 +73,36 @@
             android:name="com.example.mobitest.comment.Tab"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.comment.Comment"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.notice.Notice"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.notice.NoticeContents1"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.notice.NoticeContents2"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.country.ChangeCountry"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.main.Main"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -80,11 +110,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.mobitest.comment.Comment"
+            android:name="com.example.mobitest.setting.NumChange"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
-        
+        <activity
+            android:name="com.example.mobitest.setting.PwChange"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+          <activity
+            android:name="com.example.mobitest.faq.FAQ"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+          <activity
+            android:name="com.example.mobitest.faq.FAQContents1"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+          <activity
+            android:name="com.example.mobitest.faq.FAQContents2"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.example.mobitest.Together"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

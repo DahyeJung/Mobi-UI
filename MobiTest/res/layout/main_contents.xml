@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/together"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="47dp"
+        android:background="@drawable/login_btn_bg"
+        android:text="함께보기"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+    
+     <Button
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="139dp"
+        android:background="@drawable/login_btn_bg"
+        android:text="나라 선택"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+     <Button
+         android:id="@+id/buyink"
+         android:layout_width="wrap_content"
+         android:layout_height="60dp"
+         android:layout_alignLeft="@+id/together"
+         android:layout_below="@+id/together"
+         android:layout_marginTop="124dp"
+         android:layout_alignRight="@+id/together"
+         android:background="@drawable/login_btn_bg"
+         android:text="잉크 구매"
+         android:textColor="#ffffff"
+         android:textSize="16sp" />
+
+</RelativeLayout>

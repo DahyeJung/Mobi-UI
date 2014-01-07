@@ -5,7 +5,7 @@
     android:orientation="horizontal" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/countryimg"
         android:layout_width="32dp"
         android:layout_height="21dp"
         android:src="@drawable/country_am"
@@ -15,7 +15,7 @@
         android:layout_marginLeft="17dp" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/countrytv"
         android:layout_width="206dp"
         android:layout_height="28dp"
         android:layout_marginRight="93dp"

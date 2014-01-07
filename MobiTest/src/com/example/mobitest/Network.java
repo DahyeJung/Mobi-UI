@@ -11,6 +11,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.mobitest.login.Login;
+
 public class Network extends Activity{
 	
 	Button cancel, refresh, save;

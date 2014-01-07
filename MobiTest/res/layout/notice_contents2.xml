@@ -31,7 +31,7 @@
         android:layout_below="@+id/p2_textView1"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
-        android:text="13.07.23" />
+        android:text="13.07.25" />
 
     <ImageView
         android:id="@+id/imageView1"

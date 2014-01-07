@@ -1,10 +1,12 @@
 package com.example.mobitest.setting;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.Button;
@@ -40,6 +42,7 @@ public class ProgramInfo extends Activity{
 		tv5 = (TextView)findViewById(R.id.textView5);
 		button1 = (Button)findViewById(R.id.button1);
 		button2 = (Button)findViewById(R.id.button2);
+		backBtn = (ImageButton)findViewById(R.id.backBtn);
 
 		title.setTypeface(typeface);
 		tv1.setTypeface(typeface);
@@ -50,14 +53,24 @@ public class ProgramInfo extends Activity{
 		button1.setTypeface(typeface);
 		button2.setTypeface(typeface);
 
+		//이전
+		backBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(ProgramInfo.this, Setting.class);
+				startActivity(intent);
+			}
+		});
+
 		button1.setOnTouchListener(new OnTouchListener() {
 
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					backBtn.setImageResource(R.drawable.btn_app_info_update_over);
+					button1.setBackgroundResource(R.drawable.btn_app_info_update_over);
 				}if(event.getAction()==MotionEvent.ACTION_UP){
-					backBtn.setImageResource(R.drawable.btn_app_info_update);//버튼을 누르지 않을 때
+					button1.setBackgroundResource(R.drawable.btn_app_info_update);//버튼을 누르지 않을 때
 				}
 
 				return false;
@@ -69,9 +82,9 @@ public class ProgramInfo extends Activity{
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					backBtn.setImageResource(R.drawable.btn_app_info_update_over);
+					button2.setBackgroundResource(R.drawable.btn_app_info_update_over);
 				}if(event.getAction()==MotionEvent.ACTION_UP){
-					backBtn.setImageResource(R.drawable.btn_app_info_update);//버튼을 누르지 않을 때
+					button2.setBackgroundResource(R.drawable.btn_app_info_update);//버튼을 누르지 않을 때
 				}
 
 				return false;

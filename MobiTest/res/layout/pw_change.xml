@@ -6,7 +6,7 @@
     android:orientation="vertical" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/pw"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editText2"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/pw"
         android:layout_marginTop="5dp"
         android:text="잘못된 비밀번호입니다."
         android:textColor="#ef4358" />
@@ -35,8 +35,8 @@
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_alignRight="@+id/editText1"
+        android:layout_alignLeft="@+id/pw"
+        android:layout_alignRight="@+id/pw"
         android:layout_below="@+id/error"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
@@ -78,7 +78,7 @@
             android:src="@drawable/login_line" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/ok"
             android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"

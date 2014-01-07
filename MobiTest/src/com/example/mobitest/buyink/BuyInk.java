@@ -1,14 +1,19 @@
 package com.example.mobitest.buyink;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mobitest.Network;
 import com.example.mobitest.R;
+import com.example.mobitest.main.Main;
 
 public class BuyInk extends ListActivity  {
 	String [] goldink = {
@@ -39,7 +44,8 @@ public class BuyInk extends ListActivity  {
 	TextView tv1, tv2, tv3, tvPrice, title;
 	Typeface typeface;
 	Network nw = new Network();
-
+	ImageButton backBtn;
+	Button btnOk;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -53,12 +59,31 @@ public class BuyInk extends ListActivity  {
 		tv3 = (TextView)findViewById(R.id.tv3);
 		tvPrice = (TextView)findViewById(R.id.price);
 		title = (TextView)findViewById(R.id.title);
-
-		tv1.setTypeface(typeface);
+		backBtn = (ImageButton)findViewById(R.id.backBtn);
+		btnOk = (Button)findViewById(R.id.btnOk);
+		
+		backBtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(BuyInk.this, Main.class);
+				startActivity(intent);
+			}
+		});
+		
+		btnOk.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(BuyInk.this,Main.class);
+				startActivity(intent);
+			}
+		});
+		/*tv1.setTypeface(typeface);
 		tv2.setTypeface(typeface);
 		tv3.setTypeface(typeface);
 		tvPrice.setTypeface(typeface);
-		title.setTypeface(typeface);
+		title.setTypeface(typeface);*/
 		
 		BuyInkArray adapter = 
 				new BuyInkArray(this, goldink, blueink, price);

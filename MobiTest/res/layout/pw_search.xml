@@ -29,8 +29,9 @@
             android:layout_alignRight="@+id/p1_tv1"
             android:layout_below="@+id/p1_tv1"
             android:layout_marginTop="20dp"
-            android:background="@drawable/login_input"
+            android:background="@drawable/edt_input"
             android:hint="아이디"
+            android:inputType="textVisiblePassword"
             android:textColor="#dddddd"
             android:padding="13dp" />
 
@@ -54,8 +55,9 @@
             android:layout_alignRight="@+id/p1_id"
             android:layout_below="@+id/p1_id"
             android:layout_marginTop="33dp"
-            android:background="@drawable/login_input"
+            android:background="@drawable/edt_input"
             android:hint="이메일"
+            android:inputType="textEmailAddress"
             android:textColor="#dddddd"
             android:padding="13dp" />
 
@@ -125,7 +127,7 @@
             android:layout_marginLeft="17dp"
             android:layout_marginRight="17dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/login_input"
+            android:background="@drawable/edt_input"
             android:hint="아이디"
             android:textColor="#dddddd" 
             android:padding="13dp"/>
@@ -138,7 +140,7 @@
             android:layout_alignRight="@+id/p2_id"
             android:layout_below="@+id/p2_id"
             android:layout_marginTop="33dp"
-            android:background="@drawable/login_input"
+            android:background="@drawable/edt_input"
             android:hint="이메일"
             android:textColor="#dddddd" 
             android:padding="13dp"/>

@@ -1,14 +1,18 @@
 package com.example.mobitest.country;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mobitest.Network;
 import com.example.mobitest.R;
+import com.example.mobitest.main.Main;
 
 public class ChangeCountry extends ListActivity  {
 	String [] Country = {
@@ -24,7 +28,7 @@ public class ChangeCountry extends ListActivity  {
 			"Italy",
 			"United Kingdom"
 	};
-	
+
 	int [] Image = {
 			R.drawable.country_am,
 			R.drawable.country_eg,
@@ -40,6 +44,7 @@ public class ChangeCountry extends ListActivity  {
 	};
 
 	TextView tv1, tv2, tv3, tvPrice, title;
+	ImageButton backBtn;
 	Typeface typeface;
 	Network nw = new Network();
 
@@ -56,13 +61,23 @@ public class ChangeCountry extends ListActivity  {
 		tv3 = (TextView)findViewById(R.id.tv3);
 		tvPrice = (TextView)findViewById(R.id.price);
 		title = (TextView)findViewById(R.id.title);
+		backBtn = (ImageButton)findViewById(R.id.backBtn);
 
-/*		tv1.setTypeface(typeface);
+		backBtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(ChangeCountry.this,Main.class);
+				startActivity(intent);
+			}
+		});
+		
+		/*		tv1.setTypeface(typeface);
 		tv2.setTypeface(typeface);
 		tv3.setTypeface(typeface);
 		tvPrice.setTypeface(typeface);
 		title.setTypeface(typeface);
-*/		
+		 */		
 		ChangeCountryArray adapter = 
 				new ChangeCountryArray(this, Country, Image);
 		setListAdapter(adapter);

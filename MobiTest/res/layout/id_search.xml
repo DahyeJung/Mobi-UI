@@ -60,7 +60,6 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/edt_input"
             android:hint="이메일"
-            android:inputType="textEmailAddress"
             android:padding="12dp"
             android:textColor="#dddddd" >
         </EditText>
@@ -142,7 +141,7 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginRight="17dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/login_btn_bg_over"
+                android:background="@drawable/login_btn_bg"
                 android:text="확인"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
@@ -158,7 +157,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/login_btn_bg"
                 android:text="회원가입"
-                android:textColor="#BBBBBB"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
             <TextView

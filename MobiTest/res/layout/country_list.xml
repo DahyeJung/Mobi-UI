@@ -5,11 +5,11 @@
     android:orientation="vertical" >
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/android:list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:listSelector="#111111"
-        android:background="#303233">
+        android:layout_height="match_parent"
+        android:background="#303233"
+        android:listSelector="#111111" >
     </ListView>
 
 </LinearLayout>
