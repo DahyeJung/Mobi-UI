@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import com.example.mobitest.Network;
 import com.example.mobitest.R;
+import com.example.mobitest.main.Main;
 
 public class Login extends Activity{
 
@@ -229,8 +230,8 @@ public class Login extends Activity{
 				if(id_text.equals("huray") && pw_text.equals("huray")){
 					//메인화면으로
 					layout.setVisibility(View.INVISIBLE);
-					Toast toast = Toast.makeText(Login.this, "메인화면으로", Toast.LENGTH_LONG);
-					toast.show();
+					Intent intent = new Intent(Login.this, Main.class);
+					startActivity(intent);
 				}else{
 					layout.setVisibility(View.VISIBLE);
 				}

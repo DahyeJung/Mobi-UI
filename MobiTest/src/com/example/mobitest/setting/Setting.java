@@ -2,6 +2,7 @@ package com.example.mobitest.setting;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -11,6 +12,7 @@ import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.mobitest.Network;
@@ -24,6 +26,8 @@ public class Setting extends Activity{
 	Typeface typeface;
 	ImageButton backBtn;
 	ImageView myinform, notice, FAQ, propersal, proinform, chk1, chk2, chk3, chk4;
+	LinearLayout layout1, layout2, layout3, layout4, layout5, layout6, layout7, layout8, layout9;
+
 
 	private boolean ImageTouched = false;
 
@@ -50,7 +54,15 @@ public class Setting extends Activity{
 		chk2 = (ImageButton)findViewById(R.id.checkbox2);
 		chk3 = (ImageButton)findViewById(R.id.checkbox3);
 		chk4 = (ImageButton)findViewById(R.id.checkbox4);
-
+		layout1 = (LinearLayout)findViewById(R.id.Linear1);
+		layout2 = (LinearLayout)findViewById(R.id.Linear2);
+		layout3 = (LinearLayout)findViewById(R.id.Linear3);
+		layout4 = (LinearLayout)findViewById(R.id.Linear4);
+		layout5 = (LinearLayout)findViewById(R.id.Linear5);
+		layout6 = (LinearLayout)findViewById(R.id.Linear6);
+		layout7 = (LinearLayout)findViewById(R.id.Linear7);
+		layout8 = (LinearLayout)findViewById(R.id.Linear8);
+		layout9 = (LinearLayout)findViewById(R.id.Linear9);
 
 		backBtn.setOnTouchListener(new OnTouchListener() {
 			@Override
@@ -73,7 +85,7 @@ public class Setting extends Activity{
 			}
 		});
 		//내 정보
-		myinform.setOnClickListener(new OnClickListener() {
+		layout1.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -82,8 +94,22 @@ public class Setting extends Activity{
 
 			}
 		});
+		layout1.setOnTouchListener(new OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
+					myinform.setBackgroundResource(R.drawable.menu_arrow_over);
+				}if(event.getAction()==MotionEvent.ACTION_UP){
+					myinform.setBackgroundResource(R.drawable.menu_arrow);//버튼을 누르지 않을 때
+				}
+
+				return false;
+			}
+		});
+
 		//자동회전
-		chk1.setOnClickListener(new OnClickListener() {
+		layout2.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -96,8 +122,22 @@ public class Setting extends Activity{
 				}
 			}
 		});
+		layout2.setOnTouchListener(new OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
+					chk1.setBackgroundResource(R.drawable.set_chkbox_active);
+				}if(event.getAction()==MotionEvent.ACTION_UP){
+					chk1.setBackgroundResource(R.drawable.set_chkbox);//버튼을 누르지 않을 때
+				}
+
+				return false;
+			}
+		});
+
 		//이동통신망 사용 알림
-		chk2.setOnClickListener(new OnClickListener() {
+		layout3.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -110,8 +150,22 @@ public class Setting extends Activity{
 				}
 			}
 		});
+		layout3.setOnTouchListener(new OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
+					chk2.setBackgroundResource(R.drawable.set_chkbox_active);
+				}if(event.getAction()==MotionEvent.ACTION_UP){
+					chk2.setBackgroundResource(R.drawable.set_chkbox);//버튼을 누르지 않을 때
+				}
+
+				return false;
+			}
+		});
+
 		//Tour guide 다시 보기
-		chk3.setOnClickListener(new OnClickListener() {
+		layout4.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -124,8 +178,22 @@ public class Setting extends Activity{
 				}
 			}
 		});
+		layout4.setOnTouchListener(new OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
+					chk3.setBackgroundResource(R.drawable.set_chkbox_active);
+				}if(event.getAction()==MotionEvent.ACTION_UP){
+					chk3.setBackgroundResource(R.drawable.set_chkbox);//버튼을 누르지 않을 때
+				}
+
+				return false;
+			}
+		});
+		
 		//관심웹툰 업데이트 알림
-		chk4.setOnClickListener(new OnClickListener() {
+		layout5.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -138,8 +206,21 @@ public class Setting extends Activity{
 				}
 			}
 		});
+		layout5.setOnTouchListener(new OnTouchListener() {
 
-		notice.setOnClickListener(new OnClickListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
+					chk4.setBackgroundResource(R.drawable.set_chkbox_active);
+				}if(event.getAction()==MotionEvent.ACTION_UP){
+					chk4.setBackgroundResource(R.drawable.set_chkbox);//버튼을 누르지 않을 때
+				}
+
+				return false;
+			}
+		});
+		//공지사항
+		layout6.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -147,8 +228,21 @@ public class Setting extends Activity{
 				startActivity(intent);
 			}
 		});
+		layout6.setOnTouchListener(new OnTouchListener() {
 
-		FAQ.setOnClickListener(new OnClickListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
+					notice.setBackgroundResource(R.drawable.menu_arrow_over);
+				}if(event.getAction()==MotionEvent.ACTION_UP){
+					notice.setBackgroundResource(R.drawable.menu_arrow);//버튼을 누르지 않을 때
+				}
+				return false;
+			}
+		});
+
+		//FAQ
+		layout7.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -156,8 +250,22 @@ public class Setting extends Activity{
 				startActivity(intent);
 			}
 		});
+		layout7.setOnTouchListener(new OnTouchListener() {
 
-		propersal.setOnClickListener(new OnClickListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
+					FAQ.setBackgroundResource(R.drawable.menu_arrow_over);
+				}if(event.getAction()==MotionEvent.ACTION_UP){
+					FAQ.setBackgroundResource(R.drawable.menu_arrow);//버튼을 누르지 않을 때
+				}
+
+				return false;
+			}
+		});
+
+		//건의/문의하기
+		layout8.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -165,8 +273,22 @@ public class Setting extends Activity{
 				startActivity(intent);
 			}
 		});
+		layout8.setOnTouchListener(new OnTouchListener() {
 
-		proinform.setOnClickListener(new OnClickListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
+					propersal.setBackgroundResource(R.drawable.menu_arrow_over);
+				}if(event.getAction()==MotionEvent.ACTION_UP){
+					propersal.setBackgroundResource(R.drawable.menu_arrow);//버튼을 누르지 않을 때
+				}
+
+				return false;
+			}
+		});
+
+		//프로그램 정보
+		layout9.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -174,7 +296,18 @@ public class Setting extends Activity{
 				startActivity(intent);
 			}
 		});
+		layout9.setOnTouchListener(new OnTouchListener() {
 
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
+					proinform.setBackgroundResource(R.drawable.menu_arrow_over);
+				}if(event.getAction()==MotionEvent.ACTION_UP){
+					proinform.setBackgroundResource(R.drawable.menu_arrow);//버튼을 누르지 않을 때
+				}
+				return false;
+			}
+		});
 	}
 
 }

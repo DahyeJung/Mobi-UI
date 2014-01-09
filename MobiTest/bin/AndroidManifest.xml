@@ -8,6 +8,8 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -103,7 +105,7 @@
             android:name="com.example.mobitest.main.Main"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
-            <intent-filter>
+             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -119,26 +121,27 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
-          <activity
+        <activity
             android:name="com.example.mobitest.faq.FAQ"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
-          <activity
+        <activity
             android:name="com.example.mobitest.faq.FAQContents1"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
-          <activity
+        <activity
             android:name="com.example.mobitest.faq.FAQContents2"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
-         <activity
+        <activity
             android:name="com.example.mobitest.Together"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
+           
     </application>
 
 </manifest>

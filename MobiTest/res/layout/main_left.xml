@@ -12,21 +12,21 @@
             android:id="@+id/left_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
             android:textColor="#777777"
             android:textSize="25sp" />
 
         <ImageView
-            android:id="@+id/left_img"
+            android:id="@+id/left_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp" />
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/date_arrow"
+            android:visibility="invisible" />
     </RelativeLayout>
 
 </LinearLayout>

@@ -22,6 +22,7 @@
             android:textSize="15sp" />
 
         <LinearLayout
+            android:id="@+id/Linear1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#303233" >
@@ -57,7 +58,7 @@
                 android:layout_marginBottom="11dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="11dp"
-                android:background="@drawable/setting_checkbutton" />
+                android:background="@drawable/menu_arrow" />
         </LinearLayout>
 
         <TextView
@@ -74,7 +75,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" >
+            android:background="#303233" 
+            android:id="@+id/Linear2">
 
             <TextView
                 android:id="@+id/textView5"
@@ -114,7 +116,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" >
+            android:background="#303233" 
+            android:id="@+id/Linear3">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -166,7 +169,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" >
+            android:background="#303233"
+            android:id="@+id/Linear4" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -218,7 +222,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" >
+            android:background="#303233"
+            android:id="@+id/Linear5" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -273,7 +278,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" >
+            android:background="#303233"
+            android:id="@+id/Linear6" >
 
             <TextView
                 android:id="@+id/textView15"
@@ -296,7 +302,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/setting_checkbutton" />
+                android:background="@drawable/menu_arrow" />
         </LinearLayout>
 
         <ImageView
@@ -310,7 +316,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" >
+            android:background="#303233"
+            android:id="@+id/Linear7" >
 
             <TextView
                 android:id="@+id/textView14"
@@ -333,7 +340,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/setting_checkbutton" />
+                android:background="@drawable/menu_arrow" />
         </LinearLayout>
 
         <ImageView
@@ -347,7 +354,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" >
+            android:background="#303233" 
+            android:id="@+id/Linear8">
 
             <TextView
                 android:id="@+id/textView16"
@@ -370,7 +378,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/setting_checkbutton" />
+                android:background="@drawable/menu_arrow" />
         </LinearLayout>
 
         <TextView
@@ -388,7 +396,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" >
+            android:background="#303233"
+            android:id="@+id/Linear9" >
 
             <TextView
                 android:id="@+id/textView18"
@@ -421,7 +430,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/setting_checkbutton" />
+                android:background="@drawable/menu_arrow" />
         </LinearLayout>
     </LinearLayout>
 
