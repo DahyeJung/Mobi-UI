@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+<LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_margin="3dp" >
+    android:layout_margin="3dp"
+    android:orientation="horizontal" >
 
     <RelativeLayout
         android:id="@+id/img"
@@ -50,7 +54,7 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
-                android:layout_height="10dp"
+                android:layout_height="11dp"
                 android:src="@drawable/navi_l" />
 
             <TextView
@@ -68,9 +72,9 @@
             android:id="@+id/good_img"
             android:layout_width="22dp"
             android:layout_height="22dp"
+            android:layout_marginLeft="10dp"
             android:scaleType="centerInside"
-            android:src="@drawable/tag_recommend" 
-            android:layout_marginLeft="10dp"/>
+            android:src="@drawable/tag_recommend" />
 
         <TextView
             android:id="@+id/right_rating_avg"
@@ -81,6 +85,9 @@
             android:layout_marginRight="26dp"
             android:textColor="#66BDCD"
             android:textSize="13sp" />
+
     </LinearLayout>
 
 </LinearLayout>
+
+ </RelativeLayout>

@@ -10,7 +10,7 @@
         android:layout_height="32dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="6dp"
+        android:layout_marginLeft="17dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:background="@drawable/menu_left"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="14dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:text="조회순"
         android:gravity="center_vertical"
         android:textSize="19dp" />

@@ -141,7 +141,26 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
-           
+        <activity
+            android:name="com.example.mobitest.main.MainLeftMenu"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.main.Main_genre"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.main.Main_my"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.view.View"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

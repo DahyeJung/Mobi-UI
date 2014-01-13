@@ -34,37 +34,29 @@ import com.example.mobitest.setting.Setting;
 
 public class Main extends Activity{
 
-	public ArrayList<Category> Rightlist;
-	public ArrayList<ListData> Leftlist;
-	public ListData data;
-	public MainListAdapter leftadapter;//왼쪽
-	public MainListAdapter2 rightadapter;//월
-	public MainListAdapter3 rightadapter2;//화
-	public MainListAdapter4 rightadapter3;//수
-	public MainListAdapter5 rightadapter4;//목
-	public MainListAdapter6 rightadapter5;//금
-	public MainListAdapter7 rightadapter6;//토
-	public MainListAdapter8 rightadapter7;//일
-	public MainListAdapter9 rightadapter8;//완결
-
+	public ArrayList<Category> RightArray;
+	public ArrayList<ListData> LeftArray;
+	public ListData Leftdata;
+	public MainLeftListAdapter Leftadapter;//왼쪽
+	public MainRightListAdapter Rightadapter;//오른쪽
 
 	ImageButton search, menuRight, menuLeft, filterArrow;
 	TextView title, toonNickname, toonTitle, toonAgelimit, toonDaysOfWeek, toonGenreMain, toonGenreSub, toonIsFamous, toonRatingAvg, toonPublishingDate;
 	Button together, buyink, country;
-	ListView list;
-	ImageView adult, arrow;
+	ListView Leftlist, Rightlist;
+	ImageView adult;
 	RelativeLayout rl_img;
 
 	Login lg = new Login();
 
-	String friendsJSON;
+	String webtoonJSON;
 	JSONArray JsonArray = null;
 	JsonParsingHelper parser = new JsonParsingHelper();
 
 	boolean imgpressed = false;
 
 	View v = null;
-
+	View v2 = null;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -81,9 +73,9 @@ public class Main extends Activity{
 		together = (Button)findViewById(R.id.together);
 		buyink = (Button)findViewById(R.id.buyink);
 		country = (Button)findViewById(R.id.country);
-		list = (ListView)findViewById(R.id.rightlist);
-
-		friendsJSON = Utils.jsonToStringFromAssetFolder("file/toons.json", getApplicationContext());
+		Rightlist = (ListView)findViewById(R.id.rightlist);
+		Leftlist = (ListView)findViewById(R.id.leftlist);
+		webtoonJSON = Utils.jsonToStringFromAssetFolder("file/toons.json", getApplicationContext());
 
 		//new getList().execute();
 		search.setOnTouchListener(new OnTouchListener() {
@@ -134,105 +126,66 @@ public class Main extends Activity{
 				return false;
 			}
 		});
+		menuLeft.setOnClickListener(new OnClickListener() {
 
-		Leftlist = new ArrayList<ListData>();
-		data = new ListData("월");
-		Leftlist.add(data);
-		data = new ListData("화");
-		Leftlist.add(data);
-		data = new ListData("수");
-		Leftlist.add(data);
-		data = new ListData("목");
-		Leftlist.add(data);
-		data = new ListData("금");
-		Leftlist.add(data);
-		data = new ListData("토");
-		Leftlist.add(data);
-		data = new ListData("일");
-		Leftlist.add(data);
-		data = new ListData("완결");
-		Leftlist.add(data);
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Main.this,MainLeftMenu.class);
+				startActivity(intent);
 
-		ListView custom_left_list = (ListView)findViewById(R.id.leftlist);
-		leftadapter = new MainListAdapter(this, android.R.layout.simple_list_item_1, Leftlist);
+			}
+		});
+		//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		LeftArray = new ArrayList<ListData>();
+		Leftdata = new ListData("월",R.drawable.date_arrow);
+		LeftArray.add(Leftdata);
+		Leftdata = new ListData("화",R.drawable.date_arrow);
+		LeftArray.add(Leftdata);
+		Leftdata = new ListData("수",R.drawable.date_arrow);
+		LeftArray.add(Leftdata);
+		Leftdata = new ListData("목",R.drawable.date_arrow);
+		LeftArray.add(Leftdata);
+		Leftdata = new ListData("금",R.drawable.date_arrow);
+		LeftArray.add(Leftdata);
+		Leftdata = new ListData("토",R.drawable.date_arrow);
+		LeftArray.add(Leftdata);
+		Leftdata = new ListData("일",R.drawable.date_arrow);
+		LeftArray.add(Leftdata);
+		Leftdata = new ListData("완결",R.drawable.date_arrow);
+		LeftArray.add(Leftdata);
 
-		custom_left_list.setAdapter(leftadapter);
-		custom_left_list.setOnItemClickListener(itemClickListenerofDaysOfWeek);
+		Leftadapter = new MainLeftListAdapter(this, android.R.layout.simple_list_item_1, LeftArray);
+
+		Leftlist.setAdapter(Leftadapter);
+		Leftlist.setOnItemClickListener(itemClickListenerofDaysOfWeek);
 
 		try {
-			Rightlist = parser.getCities(friendsJSON);
+			RightArray = parser.getWebtoons(webtoonJSON);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		rightadapter = new MainListAdapter2(this, android.R.layout.simple_list_item_1, Rightlist);
-
-
-		try {
-			Rightlist = parser.getCities2(friendsJSON);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		rightadapter2 = new MainListAdapter3(this, android.R.layout.simple_list_item_1, Rightlist);
-
-
-		try {
-			Rightlist = parser.getCities3(friendsJSON);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		rightadapter3 = new MainListAdapter4(this, android.R.layout.simple_list_item_1, Rightlist);
-
-
-		try {
-			Rightlist = parser.getCities4(friendsJSON);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		rightadapter4 = new MainListAdapter5(this, android.R.layout.simple_list_item_1, Rightlist);
-
-
-		try {
-			Rightlist = parser.getCities5(friendsJSON);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		rightadapter5 = new MainListAdapter6(this, android.R.layout.simple_list_item_1, Rightlist);
-
-
-		try {
-			Rightlist = parser.getCities6(friendsJSON);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		rightadapter6 = new MainListAdapter7(this, android.R.layout.simple_list_item_1, Rightlist);
-
-
-		try {
-			Rightlist = parser.getCities7(friendsJSON);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		rightadapter7 = new MainListAdapter8(this, android.R.layout.simple_list_item_1, Rightlist);
-
-
-		/*	try {
-			Rightlist = parser.getCities8(friendsJSON);//완결
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-
-		list.setVerticalScrollBarEnabled(true);
-		list.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		ddd();
+		Rightadapter.notifyDataSetChanged();
+		Rightlist.setAdapter(Rightadapter);
+		Rightlist.setOnItemClickListener(itemClickListenerRight);
+		Rightlist.setVerticalScrollBarEnabled(true);
+		Rightlist.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
 	}//onCreate
+	
+	private OnItemClickListener itemClickListenerRight = new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			
+			Intent intent = new Intent(Main.this, com.example.mobitest.view.View.class);
+			startActivity(intent);
+		}
+		
+		
+	};
 	/**
 	 * Leftlistview item click
 	 */
@@ -242,44 +195,113 @@ public class Main extends Activity{
 		public void onItemClick(AdapterView<?> adapterView, View clickedView, int pos,
 				long id) {
 
-
 			LayoutInflater l =(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			v = l.inflate(R.layout.main_left, null);
-			arrow = (ImageView)findViewById(R.id.left_arrow);
 
+			LeftArray.get(pos);
 			imgpressed = true;
-
-			if(imgpressed==true){
-				Toast toast = Toast.makeText(Main.this, (pos+1)+"번째 눌러졌음", Toast.LENGTH_LONG);
-				toast.show();
-				arrow.setVisibility(View.VISIBLE);
-				imgpressed = false;
-			}else if(imgpressed==false){
-				Toast toast = Toast.makeText(Main.this, (pos+1)+"번째 손 뗌", Toast.LENGTH_LONG);
-				toast.show();
-				arrow.setVisibility(View.INVISIBLE);
-				imgpressed = true;
-			}
 
 			if(pos == 0){
 				//월요일인 값. 나와야됨
-				list.setAdapter(rightadapter);
-			}else if(pos == 1){
-				list.setAdapter(rightadapter2);
-			}else if(pos == 2){
-				list.setAdapter(rightadapter3);
-			}else if(pos == 3){
-				list.setAdapter(rightadapter4);
-			}else if(pos == 4){
-				list.setAdapter(rightadapter5);
-			}else if(pos == 5){
-				list.setAdapter(rightadapter6);
-			}else if(pos == 6){
-				list.setAdapter(rightadapter6);
-			}
+				try {
+					RightArray = parser.getWebtoons(webtoonJSON);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ddd();
+				Rightadapter.notifyDataSetChanged();
+				Rightlist.setAdapter(Rightadapter);
 
+			}else if(pos == 1){
+				//				RightArray.clear();
+				try {
+					RightArray = parser.getWebtoons2(webtoonJSON);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ddd();
+				Rightadapter.notifyDataSetChanged();
+				Rightlist.setAdapter(Rightadapter);
+
+			}else if(pos == 2){
+				//				RightArray.clear();
+				try {
+					RightArray = parser.getWebtoons3(webtoonJSON);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ddd();
+				Rightadapter.notifyDataSetChanged();
+				Rightlist.setAdapter(Rightadapter);
+
+			}else if(pos == 3){
+				//				RightArray.clear();
+				try {
+					RightArray = parser.getWebtoons4(webtoonJSON);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ddd();
+				Rightadapter.notifyDataSetChanged();
+				Rightlist.setAdapter(Rightadapter);
+
+			}else if(pos == 4){
+				//				RightArray.clear();
+				try {
+					RightArray = parser.getWebtoons5(webtoonJSON);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ddd();
+				Rightadapter.notifyDataSetChanged();
+				Rightlist.setAdapter(Rightadapter);
+
+			}else if(pos == 5){
+				//				RightArray.clear();
+				try {
+					RightArray = parser.getWebtoons6(webtoonJSON);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ddd();
+				Rightadapter.notifyDataSetChanged();
+				Rightlist.setAdapter(Rightadapter);
+
+			}else if(pos == 6){	
+				//				RightArray.clear();
+				try {
+					RightArray = parser.getWebtoons7(webtoonJSON);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ddd();
+				Rightadapter.notifyDataSetChanged();
+				Rightlist.setAdapter(Rightadapter);
+			}else if(pos==7){
+				RightArray.clear();
+				ddd();
+				Rightadapter.notifyDataSetChanged();
+				Rightlist.setAdapter(Rightadapter);
+				Toast toast = Toast.makeText(Main.this, "해당 작품이 없습니다.", Toast.LENGTH_LONG);
+				toast.show();
+			}
 		}
 	};
+
+
+
+
+	public void ddd(){
+		Rightadapter = new MainRightListAdapter(this, android.R.layout.simple_list_item_1, RightArray);
+	}
+
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
