@@ -3,6 +3,7 @@ package com.example.mobitest.main;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.example.mobitest.R;
 public class MainLeftListAdapter2 extends ArrayAdapter<ListData>{
 
 	private ArrayList<ListData> items;
+	int selected = 0;
 
 	public MainLeftListAdapter2(Context context, int textViewResourceId, ArrayList<ListData> items) {
 		super(context, textViewResourceId, items);
@@ -31,12 +33,21 @@ public class MainLeftListAdapter2 extends ArrayAdapter<ListData>{
 		}
 		ListData listdata = items.get(position);
 
+		TextView lefttv = (TextView)v.findViewById(R.id.left_text);
+		ImageView leftArrow = (ImageView) v.findViewById(R.id.left_arrow);
+
 		if(listdata != null){
-			TextView lefttv = (TextView)v.findViewById(R.id.left_text);
 			lefttv.setText(listdata.getDay());
-			
-			ImageView imageview = (ImageView)v.findViewById(R.id.left_arrow);
-			imageview.setImageResource(R.drawable.date_arrow);
+		}
+
+		if(position == selected) {
+			leftArrow.setVisibility(View.VISIBLE);
+			lefttv.setTextColor(Color.parseColor("#ffe4354a"));
+
+		}
+		else {
+			leftArrow.setVisibility(View.INVISIBLE);
+			lefttv.setTextColor(Color.parseColor("#ff777777"));
 		}
 
 		return v;

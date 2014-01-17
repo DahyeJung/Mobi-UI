@@ -10,13 +10,15 @@
 
         <TextView
             android:id="@+id/left_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
             android:gravity="center"
             android:textColor="#777777"
+            android:background="@drawable/left_list_border_selector"
             android:textSize="25sp" />
 
         <ImageView
@@ -25,7 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:src="@drawable/date_arrow"
             android:visibility="invisible" />
+
     </RelativeLayout>
 
 </LinearLayout>

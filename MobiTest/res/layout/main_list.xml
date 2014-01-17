@@ -29,9 +29,8 @@
         android:layout_alignRight="@+id/img_layout"
         android:layout_below="@+id/img_layout"
         android:background="#28292a"
-        android:dividerHeight="0px" 
-        
-        >
+        android:dividerHeight="0px"
+        android:focusable="false" >
     </ListView>
 
     <ListView
@@ -40,7 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/leftlist" >
+        android:layout_toRightOf="@+id/leftlist" 
+        android:focusable="false">
     </ListView>
 
 </RelativeLayout>

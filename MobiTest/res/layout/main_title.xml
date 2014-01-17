@@ -16,32 +16,13 @@
         android:background="@drawable/menu_left"
         android:scaleType="fitXY" />
 
-    <TextView
-        android:id="@+id/country_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp"
-        android:layout_marginTop="10dp"
-        android:text="조회순"
-        android:gravity="center_vertical"
-        android:textSize="19dp" />
-
-    <ImageButton
-        android:id="@+id/imageView1"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_alignTop="@+id/country_title"
-        android:layout_toRightOf="@+id/country_title"
-        android:background="@drawable/filter_arrow" />
-
     <ImageButton
         android:id="@+id/menu_right"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="6dp"
         android:layout_alignTop="@+id/menu_left"
+        android:layout_marginRight="17dp"
         android:background="@drawable/menu_right" />
 
     <ImageButton
@@ -52,5 +33,32 @@
         android:layout_marginRight="2dp"
         android:layout_toLeftOf="@+id/menu_right"
         android:background="@drawable/search" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:id="@+id/country_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:textColor="#D0D0D0"
+            android:textSize="19dp" />
+
+        <ImageButton
+            android:id="@+id/more"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/filter_arrow"
+            android:focusable="true" />
+    </LinearLayout>
 
 </RelativeLayout>

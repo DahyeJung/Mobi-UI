@@ -24,7 +24,7 @@
         android:adjustViewBounds="true"
         android:layout_marginRight="17dp"
         android:layout_marginLeft="8dp"
-        android:background="@drawable/favor_btn_click"
+        android:background="@drawable/favor"
         android:layout_alignTop="@+id/backBtn"
         android:scaleType="fitXY" />
 
@@ -35,7 +35,7 @@
         android:layout_alignTop="@+id/favorBtn"
         android:layout_toLeftOf="@+id/favorBtn"
         android:adjustViewBounds="true"
-        android:background="@drawable/alarm_btn_click"
+        android:background="@drawable/alarm"
         android:scaleType="fitXY" />
 
 </RelativeLayout>

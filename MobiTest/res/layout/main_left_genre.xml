@@ -10,12 +10,14 @@
 
         <TextView
             android:id="@+id/left_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/left_list_border_selector"
             android:gravity="center"
+            android:paddingBottom="17dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="17dp"
             android:textColor="#777777"
             android:textSize="18sp" />
 
@@ -25,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:src="@drawable/date_arrow"
             android:visibility="invisible" />
     </RelativeLayout>
 

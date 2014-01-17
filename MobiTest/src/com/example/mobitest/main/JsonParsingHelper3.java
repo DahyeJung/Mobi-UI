@@ -33,9 +33,9 @@ public class JsonParsingHelper3 {
 				String is_famous = c.getString("is_famous");
 				String rating_avg = c.getString("rating_avg");
 				String publishing_date = c.getString("publishing_date");
+				String view_count = c.getString("view_count");
 
-
-				if(toon_title.equals("애정시대")||toon_title.equals("움비처럼")){
+				if(toon_title.equals("애정시대")||toon_title.equals("움비처럼")||toon_title.equals("신의 탑")||toon_title.equals("세렌디파티")){
 
 					cat.setNickname(nickname);
 					cat.setToonTitle(toon_title);
@@ -46,7 +46,7 @@ public class JsonParsingHelper3 {
 					cat.setIsFamous(is_famous);
 					cat.setRatingAvg(rating_avg);
 					cat.setPublishingDate(publishing_date);
-
+					cat.setViewCount(view_count);
 
 					arraytoon.add(cat);
 				}

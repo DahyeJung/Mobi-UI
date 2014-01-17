@@ -12,8 +12,8 @@ public class Category{
 	String IsFamous;
 	String RatingAvg;
 	String PublishingDate;
-	
-	
+	String ViewCount;
+
 	public String getNickname() {
 		return Nickname;
 	}
@@ -68,14 +68,20 @@ public class Category{
 	public void setPublishingDate(String publishingDate) {
 		PublishingDate = publishingDate;
 	}
-	
-	
-	
-	
-	
-	
+	public String getViewCount() {
+		return ViewCount;
+	}
+	public void setViewCount(String viewCount) {
+		ViewCount = viewCount;
+	}
 
-	 
-	 
-	 
+
+
+
+
+
+
+
+
+
 }

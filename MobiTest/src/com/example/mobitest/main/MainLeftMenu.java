@@ -28,7 +28,6 @@ public class MainLeftMenu extends Activity{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		setContentView(R.layout.main_menu_left);
-
 		rl1 = (RelativeLayout)findViewById(R.id.rl1);
 		rl2 = (RelativeLayout)findViewById(R.id.rl2);
 		rl3 = (RelativeLayout)findViewById(R.id.rl3);

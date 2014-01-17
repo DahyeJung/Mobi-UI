@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/index_arrow_outdated_over" android:state_pressed="true"/>
+    <!-- pressed -->
+    <item android:drawable="@drawable/index_arrow_outdated" android:state_pressed="false"/>
+    <!-- default -->
+
+</selector>

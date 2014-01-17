@@ -26,4 +26,5 @@
     <style name="CustomWindowTitleBackground">
         <item name = "android:background">@drawable/navibar</item>
     </style>
+    
 </resources>

@@ -105,7 +105,7 @@
             android:name="com.example.mobitest.main.Main"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
-             <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -158,6 +158,11 @@
         </activity>
         <activity
             android:name="com.example.mobitest.view.View"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.mobitest.account.Account"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>

@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.mobitest.Network;
 import com.example.mobitest.R;
+import com.example.mobitest.account.Account;
 import com.example.mobitest.faq.FAQ;
 import com.example.mobitest.main.Main;
 import com.example.mobitest.notice.Notice;
@@ -80,7 +81,7 @@ public class Setting extends Activity{
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(Setting.this,Main.class);
+				Intent intent = new Intent(Setting.this,Account.class);
 				startActivity(intent);
 			}
 		});
