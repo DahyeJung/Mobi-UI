@@ -7,15 +7,12 @@ import org.json.JSONException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -36,7 +33,6 @@ import android.widget.Toast;
 import com.example.mobitest.R;
 import com.example.mobitest.account.Account;
 import com.example.mobitest.login.Login;
-import com.example.mobitest.setting.Setting;
 
 public class Main_my extends Activity{
 
@@ -45,7 +41,7 @@ public class Main_my extends Activity{
 	public ListData Leftdata;
 	public ArrayList<String> MainArray;
 	public ArrayAdapter<String> adapter;
-	public MainLeftListAdapter3 Leftadapter;//왼쪽
+	public MainLeftListAdapter Leftadapter;//왼쪽
 	public MainRightListAdapter Rightadapter;//오른쪽
 	ImageButton search, menuRight, menuLeft, filterArrow, more;
 	TextView title, toonNickname, toonTitle, toonAgelimit, toonDaysOfWeek, toonGenreMain, toonGenreSub, toonIsFamous, toonRatingAvg, toonPublishingDate;
@@ -70,7 +66,7 @@ public class Main_my extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-		setContentView(R.layout.main_genre_list);
+		setContentView(R.layout.main_my_list);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.main_title);
 
 		MainArray = new ArrayList<String>();
@@ -108,7 +104,7 @@ public class Main_my extends Activity{
 				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
 					menuRight.setBackgroundResource(R.drawable.menu_right_over);
 				}if(event.getAction()==MotionEvent.ACTION_UP){
-					menuRight.setBackgroundResource(R.drawable.menu_right);//버튼을 누르지 않을 때
+					menuRight.setBackgroundResource(R.drawable.menu_right_touch);//버튼을 누르지 않을 때
 				}
 
 				return false;
@@ -124,18 +120,6 @@ public class Main_my extends Activity{
 			}
 		});
 
-		menuLeft.setOnTouchListener(new OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					menuLeft.setBackgroundResource(R.drawable.menu_left_over);
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					menuLeft.setBackgroundResource(R.drawable.menu_left);//버튼을 누르지 않을 때
-				}
-				return false;
-			}
-		});
 		menuLeft.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -149,21 +133,6 @@ public class Main_my extends Activity{
 		more = (ImageButton)findViewById(R.id.more);
 
 		title_linear = (LinearLayout)findViewById(R.id.linearlayout);
-		title_linear.setOnTouchListener(new View.OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					title.setTextColor(Color.parseColor("#e4354a"));
-					more.setBackgroundResource(R.drawable.filter_arrow2);
-				}if(event.getAction()==MotionEvent.ACTION_UP){//버튼을 누르지 않을 때
-					title.setTextColor(Color.parseColor("#D0D0D0"));
-					more.setBackgroundResource(R.drawable.filter_arrow);
-				}
-				return false;
-			}
-		});
 		title_linear.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -176,7 +145,17 @@ public class Main_my extends Activity{
 
 
 		//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		
+		if(LeftArray!=null){
+			LeftArray.clear();
+		}
+		
 		LeftArray = new ArrayList<ListData>();
+		
+		if(LeftArray.size()!=0){
+			LeftArray.clear();
+		}
+		
 		Leftdata = new ListData("관심");
 		LeftArray.add(Leftdata);
 		Leftdata = new ListData("최근");
@@ -184,11 +163,14 @@ public class Main_my extends Activity{
 		Leftdata = new ListData("저장");
 		LeftArray.add(Leftdata);
 
-		Leftadapter = new MainLeftListAdapter3(this, android.R.layout.simple_list_item_1, LeftArray);
-
+		
+		Leftadapter = new MainLeftListAdapter(this, android.R.layout.simple_list_item_1, LeftArray, MainLeftListAdapter.TYPE_MY);
 		Leftlist.setAdapter(Leftadapter);
 		Leftlist.setOnItemClickListener(itemClickListenerofDaysOfWeek);
-
+		Leftlist.setCacheColorHint(0x00000000);
+		Leftlist.setSelector(new ColorDrawable(Color.TRANSPARENT));
+		Leftlist.setDivider(null);
+		
 		try {
 			RightArray = parser.getWebtoons(webtoonJSON);
 		} catch (JSONException e) {

@@ -11,12 +11,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="3dp" >
+        android:layout_margin="3dp"
+        android:background="#28292a" >
 
         <RelativeLayout
             android:id="@+id/imageView1"
-            android:layout_width="95dp"
-            android:layout_height="70dp"
+            android:layout_width="113dp"
+            android:layout_height="78dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY" >
         </RelativeLayout>
@@ -26,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="8dp"
             android:layout_toRightOf="@+id/imageView1"
             android:text="TextView"
             android:textColor="#FFFFFF"
@@ -40,6 +41,7 @@
             android:layout_below="@+id/textView1"
             android:layout_toRightOf="@+id/imageView1"
             android:text="TextView"
+            android:layout_marginTop="2dp"
             android:textColor="#888888"
             android:textSize="10sp" />
 
@@ -50,7 +52,7 @@
             android:layout_alignLeft="@+id/textView1"
             android:layout_below="@+id/textView2"
             android:layout_marginBottom="7dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="16dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             android:src="@drawable/rate_9" />
@@ -61,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView2"
             android:layout_marginLeft="3dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:layout_toRightOf="@+id/imageView2"
             android:text="9.6"
             android:textColor="#51CAE1"
@@ -72,27 +74,22 @@
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_alignBottom="@+id/textView3"
-            android:layout_marginLeft="3dp"
-            android:layout_toRightOf="@+id/textView3"
-            android:src="@drawable/tag_shared" />
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/imageButton1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="32dp"
+            android:src="@drawable/tag_downloaded" />
 
         <ImageView
             android:id="@+id/imageButton2"
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:layout_alignTop="@+id/imageButton1"
-            android:layout_marginLeft="6dp"
-            android:layout_toRightOf="@+id/imageButton1"
-            android:src="@drawable/tag_downloaded" />
-
-        <ImageView
-            android:id="@+id/imageButton3"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/imageButton1"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="6dp"
-            android:layout_toRightOf="@+id/imageButton2"
+            android:layout_marginRight="8dp"
             android:src="@drawable/tag_gifted" />
 
         <ImageView
@@ -114,8 +111,24 @@
             android:textColor="#FFFFFF"
             android:textSize="9sp" />
 
+          <View
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_alignBottom="@+id/imageView1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/list_stork" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_alignBottom="@+id/imageView1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/list_border_selector" />
+
     </RelativeLayout>
 
-    
-    
 </RelativeLayout>

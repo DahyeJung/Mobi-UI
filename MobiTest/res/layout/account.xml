@@ -56,7 +56,8 @@
             android:adjustViewBounds="true"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/my_icon_my" />
+            android:src="@drawable/my_icon_my" 
+            android:duplicateParentState="true"/>
 
         <TextView
             android:id="@+id/textView1"
@@ -68,7 +69,8 @@
             android:clickable="true"
             android:text="내정보"
             android:textColor="#CCCCCC"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:duplicateParentState="true" />
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -83,7 +85,8 @@
             android:adjustViewBounds="true"
             android:background="@drawable/menu_arrow"
             android:clickable="true"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY" 
+            android:duplicateParentState="true"/>
 
         <TextView
             android:id="@+id/textView2"
@@ -123,7 +126,8 @@
             android:adjustViewBounds="true"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/my_icon_gift" />
+            android:src="@drawable/my_icon_gift"
+            android:duplicateParentState="true" />
 
         <TextView
             android:id="@+id/textView3"
@@ -135,8 +139,9 @@
             android:clickable="true"
             android:text="선물함"
             android:textColor="#CCCCCC"
-            android:textSize="15sp" />
-
+            android:textSize="15sp"
+            android:duplicateParentState="true" />
+        
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="20dp"
@@ -150,7 +155,8 @@
             android:adjustViewBounds="true"
             android:background="@drawable/menu_arrow"
             android:clickable="true"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY" 
+            android:duplicateParentState="true"/>
     </RelativeLayout>
 
     <ImageView
@@ -177,7 +183,8 @@
             android:adjustViewBounds="true"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/my_icon_ink" />
+            android:src="@drawable/my_icon_ink" 
+            android:duplicateParentState="true"/>
 
         <TextView
             android:id="@+id/textView4"
@@ -188,7 +195,8 @@
             android:clickable="true"
             android:text="잉크함"
             android:textColor="#CCCCCC"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:duplicateParentState="true" />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -203,7 +211,8 @@
             android:adjustViewBounds="true"
             android:background="@drawable/menu_arrow"
             android:clickable="true"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY" 
+            android:duplicateParentState="true"/>
     </RelativeLayout>
 
     <ImageView
@@ -230,7 +239,8 @@
             android:adjustViewBounds="true"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/my_icon_setting" />
+            android:src="@drawable/account_setting"
+            android:duplicateParentState="true" />
 
         <TextView
             android:id="@+id/textView5"
@@ -240,8 +250,9 @@
             android:layout_toRightOf="@+id/imageView7"
             android:clickable="true"
             android:text="설정"
-            android:textColor="#CCCCCC"
-            android:textSize="15sp" />
+            android:textColor="@drawable/title_text"
+            android:textSize="15sp"
+            android:duplicateParentState="true" />
 
         <ImageButton
             android:id="@+id/imageButton4"
@@ -254,9 +265,10 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="13dp"
             android:adjustViewBounds="true"
-            android:background="@drawable/menu_arrow"
+            android:background="@drawable/arrow"
             android:clickable="true"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:duplicateParentState="true" />
     </RelativeLayout>
 
     <ImageView

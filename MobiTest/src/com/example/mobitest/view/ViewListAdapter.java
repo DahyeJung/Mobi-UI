@@ -21,7 +21,7 @@ public class ViewListAdapter extends ArrayAdapter<Category>{
 	public ViewListAdapter adapter;
 
 	TextView webtoon_title, date, rating_avg, ink, view_cost;
-	ImageView img_rating_avg, bg_ink_bg_blue, tag_ink, tag_shared, tag_download, tag_gift;
+	ImageView img_rating_avg, bg_ink_bg_blue, tag_ink, tag_download, tag_gift;
 	RelativeLayout img;
 	
 
@@ -45,48 +45,8 @@ public class ViewListAdapter extends ArrayAdapter<Category>{
 		LayoutInflater l = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		v = l.inflate(R.layout.view_contents, null);
 
-		tag_shared = (ImageView)v.findViewById(R.id.imageButton1);
 		tag_download = (ImageView)v.findViewById(R.id.imageButton2);
 		tag_gift = (ImageView)v.findViewById(R.id.imageButton3);
-
-		tag_shared.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				if(imgpressed == false){
-					imgpressed = true;
-					tag_shared.setBackgroundResource(R.drawable.tag_shared_active);
-				}else if(imgpressed == true){
-					tag_shared.setBackgroundResource(R.drawable.tag_shared);
-				}
-			}
-		});
-
-		tag_download.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				if(imgpressed == false){
-					imgpressed = true;
-					tag_shared.setBackgroundResource(R.drawable.tag_downloaded_active);
-				}else if(imgpressed == true){
-					tag_shared.setBackgroundResource(R.drawable.tag_downloaded);
-				}
-			}
-		});
-
-		tag_gift.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				if(imgpressed == false){
-					imgpressed = true;
-					tag_shared.setBackgroundResource(R.drawable.tag_gifted_active);
-				}else if(imgpressed == true){
-					tag_shared.setBackgroundResource(R.drawable.tag_gifted);
-				}
-			}
-		});
 
 		webtoon_title = (TextView)v.findViewById(R.id.textView1);
 		date = (TextView)v.findViewById(R.id.textView2);

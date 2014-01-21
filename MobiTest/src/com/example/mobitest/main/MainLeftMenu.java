@@ -41,22 +41,6 @@ public class MainLeftMenu extends Activity{
 		genre = (TextView)findViewById(R.id.textView2);
 		my = (TextView)findViewById(R.id.textView3);
 		//요일별 웹툰
-		rl1.setOnTouchListener(new OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					icon_date.setImageResource(R.drawable.menu_icon_date_over);
-					menu_arrow1.setImageResource(R.drawable.menu_arrow_over);
-					date.setTextColor(Color.parseColor("#ef4358"));
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					icon_date.setImageResource(R.drawable.menu_icon_date);
-					menu_arrow1.setImageResource(R.drawable.menu_arrow);
-					date.setTextColor(Color.parseColor("#cccccc"));
-				}
-				return false;
-			}
-		}); 
 		rl1.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -67,23 +51,6 @@ public class MainLeftMenu extends Activity{
 		});
 
 		//장르별 웹툰
-		rl2.setOnTouchListener(new View.OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					icon_genre.setImageResource(R.drawable.menu_icon_genre_over);
-					menu_arrow2.setImageResource(R.drawable.menu_arrow_over);
-					genre.setTextColor(Color.parseColor("#ef4358"));
-
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					icon_genre.setImageResource(R.drawable.menu_icon_genre);
-					menu_arrow2.setImageResource(R.drawable.menu_arrow);
-					genre.setTextColor(Color.parseColor("#cccccc"));
-				}
-				return false;
-			}
-		});
 		rl2.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -94,23 +61,6 @@ public class MainLeftMenu extends Activity{
 		});
 
 		//마이웹툰
-		rl3.setOnTouchListener(new View.OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					icon_my.setImageResource(R.drawable.menu_icon_my_over);
-					menu_arrow3.setImageResource(R.drawable.menu_arrow_over);
-					my.setTextColor(Color.parseColor("#ef4358"));
-
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					icon_my.setImageResource(R.drawable.menu_icon_my);
-					menu_arrow3.setImageResource(R.drawable.menu_arrow);
-					my.setTextColor(Color.parseColor("#cccccc"));
-				}
-				return false;
-			}
-		});
 		rl3.setOnClickListener(new View.OnClickListener() {
 
 			@Override

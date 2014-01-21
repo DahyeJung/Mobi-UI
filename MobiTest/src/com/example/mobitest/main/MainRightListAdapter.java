@@ -54,44 +54,44 @@ public class MainRightListAdapter extends ArrayAdapter<Category>{
 	boolean imgpressed = false;
 
 	View v = null;
-		
+
 	private ArrayList<Category> items;
-	
+
 	private final static Comparator<Category> ratingComparator = new Comparator<Category>() {
-		
+
 		@Override
 		public int compare(Category lhs, Category rhs) {
 			float lhsRating = Float.valueOf(lhs.RatingAvg);
 			float rhsRating = Float.valueOf(rhs.RatingAvg);
-			
+
 			if(lhsRating > rhsRating) {
 				return -2;
 			}
-			
+
 			return 2;
 		}
 	};
-	
+
 	private final static Comparator<Category> dataComparator = new Comparator<Category>() {
 		private final Collator collator = Collator.getInstance();
-		
+
 		@Override
 		public int compare(Category lhs, Category rhs) {
 			String lhsDate = lhs.PublishingDate;
 			String rhsDate = rhs.PublishingDate;
-			
+
 			return collator.compare(rhsDate, lhsDate);
 		}
 	};
 
 	private final static Comparator<Category> viewcountComparator = new Comparator<Category>() {
 		private final Collator collator = Collator.getInstance();
-		
+
 		@Override
 		public int compare(Category lhs, Category rhs) {
 			String lhsDate = lhs.ViewCount;
 			String rhsDate = rhs.ViewCount;
-			
+
 			return collator.compare(rhsDate, lhsDate);
 		}
 	};
@@ -100,11 +100,11 @@ public class MainRightListAdapter extends ArrayAdapter<Category>{
 		super(context, textViewResourceId, items);
 		this.items = items;	
 	}
-	
+
 	public static final int METHOD_BY_UPDATE = 0;
 	public static final int METHOD_BY_RATING = 1;
 	public static final int METHOD_BY_VIEWCOUNT = 2;
-	
+
 	public void sortBy(int method) {
 		switch (method) {
 		case METHOD_BY_UPDATE: // by update date
@@ -116,10 +116,10 @@ public class MainRightListAdapter extends ArrayAdapter<Category>{
 		case METHOD_BY_VIEWCOUNT: // by viewcount
 			Collections.sort(this.items,viewcountComparator);
 		default:
-			
+
 			break;
 		}
-		
+
 		notifyDataSetChanged();
 	}
 
@@ -128,7 +128,7 @@ public class MainRightListAdapter extends ArrayAdapter<Category>{
 		//View v = null;
 		LayoutInflater l = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		v = l.inflate(R.layout.main_right, null);
-		
+
 		toonNickname = (TextView)v.findViewById(R.id.right_nickname);
 		toonTitle = (TextView)v.findViewById(R.id.right_title);	
 		/*toonAgelimit = (TextView)v.findViewById(R.id.right_age_limit);
@@ -142,13 +142,13 @@ public class MainRightListAdapter extends ArrayAdapter<Category>{
 		isfamous = (ImageView)v.findViewById(R.id.good_img);
 		rl_img = (RelativeLayout)v.findViewById(R.id.img);
 		rate = (ImageView)v.findViewById(R.id.rate_img);
-		
+
 		adult.setVisibility(View.INVISIBLE);
 		isfamous.setVisibility(View.INVISIBLE);
-		
-//		ImageView ivBorder = ((ImageView)v.findViewById(R.id.border));
-//		ivBorder.setImageDrawable(new ColorDrawable(0xFF0000FF));
-//		ivBorder.setVisibility(View.VISIBLE);
+
+		//		ImageView ivBorder = ((ImageView)v.findViewById(R.id.border));
+		//		ivBorder.setImageDrawable(new ColorDrawable(0xFF0000FF));
+		//		ivBorder.setVisibility(View.VISIBLE);
 
 		String agelimit = items.get(position).getAgeLimit();
 		int int_agelimit = Integer.parseInt(agelimit);

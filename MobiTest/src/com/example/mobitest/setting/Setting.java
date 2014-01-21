@@ -51,10 +51,10 @@ public class Setting extends Activity{
 		FAQ = (ImageButton)findViewById(R.id.imageView8);
 		propersal = (ImageButton)findViewById(R.id.imageView10);
 		proinform = (ImageButton)findViewById(R.id.imageView11);
-		chk1 = (ImageButton)findViewById(R.id.checkbox1);
-		chk2 = (ImageButton)findViewById(R.id.checkbox2);
-		chk3 = (ImageButton)findViewById(R.id.checkbox3);
-		chk4 = (ImageButton)findViewById(R.id.checkbox4);
+		chk1 = (ImageView)findViewById(R.id.checkbox1);
+		chk2 = (ImageView)findViewById(R.id.checkbox2);
+		chk3 = (ImageView)findViewById(R.id.checkbox3);
+		chk4 = (ImageView)findViewById(R.id.checkbox4);
 		layout1 = (LinearLayout)findViewById(R.id.Linear1);
 		layout2 = (LinearLayout)findViewById(R.id.Linear2);
 		layout3 = (LinearLayout)findViewById(R.id.Linear3);

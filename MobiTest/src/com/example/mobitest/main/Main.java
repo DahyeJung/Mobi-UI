@@ -8,7 +8,6 @@ import org.json.JSONException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,11 +15,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -73,6 +70,8 @@ public class Main extends Activity {
 		setContentView(R.layout.main_list);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.main_title);
 
+		
+		
 		MainArray = new ArrayList<String>();
 		MainArray.add("업데이트순");
 		MainArray.add("조회순");
@@ -89,21 +88,6 @@ public class Main extends Activity {
 
 		title_linear = (LinearLayout)findViewById(R.id.linearlayout);
 
-		title_linear.setOnTouchListener(new View.OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					title.setTextColor(Color.parseColor("#e4354a"));
-					more.setBackgroundResource(R.drawable.filter_arrow2);
-				}if(event.getAction()==MotionEvent.ACTION_UP){//버튼을 누르지 않을 때
-					title.setTextColor(Color.parseColor("#D0D0D0"));
-					more.setBackgroundResource(R.drawable.filter_arrow);
-				}
-				return false;
-			}
-		});
 		title_linear.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -112,33 +96,6 @@ public class Main extends Activity {
 			}
 		});
 
-		search.setOnTouchListener(new OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					search.setBackgroundResource(R.drawable.search_over);
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					search.setBackgroundResource(R.drawable.search);//버튼을 누르지 않을 때
-				}
-				return false;
-			}
-		});
-
-		menuRight.setOnTouchListener(new OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					menuRight.setBackgroundResource(R.drawable.menu_right_over);
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					menuRight.setBackgroundResource(R.drawable.menu_right);//버튼을 누르지 않을 때
-				}
-
-				return false;
-			}
-		});
 		menuRight.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -148,18 +105,6 @@ public class Main extends Activity {
 			}
 		});
 
-		menuLeft.setOnTouchListener(new OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					menuLeft.setBackgroundResource(R.drawable.menu_left_over);
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					menuLeft.setBackgroundResource(R.drawable.menu_left);//버튼을 누르지 않을 때
-				}
-				return false;
-			}
-		});
 		menuLeft.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -168,8 +113,15 @@ public class Main extends Activity {
 				startActivity(intent);
 			}
 		});
-
+		
+		
+		
 		LeftArray = new ArrayList<ListData>();
+		
+		if(LeftArray.size()!=0){
+			LeftArray.clear();
+		}
+		
 		Leftdata = new ListData("월");
 		LeftArray.add(Leftdata);
 		Leftdata = new ListData("화");
@@ -199,16 +151,17 @@ public class Main extends Activity {
 			dayOfWeek -= 1;
 			break;
 		}
-
-		Leftadapter = new MainLeftListAdapter(this, android.R.layout.simple_list_item_1, LeftArray);
-
+		
+		Leftadapter = new MainLeftListAdapter(this, android.R.layout.simple_list_item_1, LeftArray, MainLeftListAdapter.TYPE_DAY);
 		Leftlist.setAdapter(Leftadapter);
+		
 		Leftlist.setOnItemClickListener(itemClickListenerofDaysOfWeek);
 		Leftlist.setCacheColorHint(0x00000000);
 		Leftlist.setSelector(new ColorDrawable(Color.TRANSPARENT));
-
-		onLeftItemClick(dayOfWeek);
-		ddd();
+		Leftlist.setDivider(null);
+		onLeftItemClick(dayOfWeek+1);
+		
+		RightadapterSetting();
 
 		Rightlist.setAdapter(Rightadapter);
 		Rightlist.setOnItemClickListener(itemClickListenerRight);
@@ -216,7 +169,8 @@ public class Main extends Activity {
 		Rightlist.setChoiceMode(ListView.CHOICE_MODE_NONE);
 		Rightlist.setCacheColorHint(0x00000000);
 		Rightlist.setSelector(new ColorDrawable(Color.TRANSPARENT));
-
+		Rightlist.setDivider(null);
+		
 	}//onCreate
 
 	private OnItemClickListener itemClickListenerRight = new OnItemClickListener() {
@@ -244,6 +198,10 @@ public class Main extends Activity {
 			onLeftItemClick(pos);
 		}
 	};
+	/**
+	 * Leftlistview item click
+	 * 
+	 */
 
 	void onLeftItemClick(int pos) {
 		Log.d("leftlist", Leftadapter.getCount() + "****");
@@ -259,14 +217,15 @@ public class Main extends Activity {
 		}
 
 		if(RightArray.size()==0){
-			Toast.makeText(Main.this, "해당 항목이 없습니다.", Toast.LENGTH_LONG)
-			.show();
+			Toast.makeText(Main.this, "해당 작품이 없습니다.", Toast.LENGTH_LONG).show();
 		}
-		ddd();
+
+		RightadapterSetting();
 		Rightlist.setAdapter(Rightadapter);
 	}
 
-	public void ddd(){
+	public void RightadapterSetting(){
+
 		Rightadapter = new MainRightListAdapter(this, android.R.layout.simple_list_item_1, RightArray);
 		onTitleClick(sortMethod);
 	}
@@ -308,7 +267,9 @@ public class Main extends Activity {
 		return dialog;
 	}
 
-	//메인화면 타이틀
+	/**
+	 * 메인화면 타이틀을 눌렀을 때
+	 */
 	public void showPopUp(){
 
 		adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,MainArray);

@@ -4,6 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <RelativeLayout
+        android:id="@+id/Relativelayout1"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:background="#000000" >
+
+        <ImageView
+            android:id="@+id/bottom"
+            android:layout_width="51dp"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/listview_bottom_btn" />
+
+        <ImageView
+            android:id="@+id/top"
+            android:layout_width="51dp"
+            android:layout_height="32dp"
+            android:layout_above="@+id/bottom"
+            android:layout_alignLeft="@+id/bottom"
+            android:layout_marginBottom="225dp"
+            android:background="@drawable/listview_top_btn"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY" />
+
+    </RelativeLayout>
+
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
@@ -17,7 +45,7 @@
         android:layout_height="45dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/imageView1"
-        android:background="#111111"
+        android:background="#28292a"
         android:paddingLeft="20dp"
         android:text="작품소개"
         android:textColor="#D6D6D6"
@@ -29,7 +57,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button2"
         android:layout_toRightOf="@+id/Relativelayout1"
-        android:dividerHeight="0px" >
+        android:dividerHeight="0px" 
+        android:focusable="false">
     </ListView>
 
     <Button
@@ -38,7 +67,7 @@
         android:layout_height="45dp"
         android:layout_alignBottom="@+id/button1"
         android:layout_toRightOf="@+id/button1"
-        android:background="#111111"
+        android:background="#28292a"
         android:paddingLeft="20dp"
         android:text="첫회보기"
         android:textColor="#D6D6D6"
@@ -60,7 +89,7 @@
         android:layout_height="45dp"
         android:layout_above="@+id/listview"
         android:layout_toRightOf="@+id/button2"
-        android:background="#111111"
+        android:background="#28292a"
         android:paddingLeft="20dp"
         android:text="임시저장"
         android:textColor="#D6D6D6"
@@ -72,7 +101,7 @@
         android:layout_height="45dp"
         android:layout_above="@+id/listview"
         android:layout_toRightOf="@+id/button3"
-        android:background="#111111"
+        android:background="#28292a"
         android:paddingLeft="20dp"
         android:text="선물하기"
         android:textColor="#D6D6D6"
@@ -148,32 +177,6 @@
             android:src="@drawable/rate_9" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/Relativelayout1"
-        android:layout_width="70dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@android:id/list" >
-
-        <ImageButton
-            android:id="@+id/top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="214dp"
-            android:background="@drawable/listview_top_btn" />
-
-        <ImageButton
-            android:id="@+id/bottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/listview_botton_btn" />
-    </RelativeLayout>
-
     <ImageView
         android:id="@+id/ImageView6"
         android:layout_width="20dp"
@@ -204,7 +207,7 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_alignRight="@+id/button3"
-        android:layout_alignTop="@+id/ImageView01"
+        android:layout_alignTop="@+id/imageView01"
         android:src="@drawable/btn_divider" />
 
 </RelativeLayout>

@@ -122,24 +122,6 @@ public class Account extends Activity{
 				return true;
 			}
 		});
-
-		rl4.setOnTouchListener(new View.OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					img4.setImageResource(R.drawable.my_icon_setting_over);
-					tv4.setTextColor(Color.parseColor("#ef4358"));
-					imgbtn4.setBackgroundResource(R.drawable.menu_arrow_over);
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					img4.setImageResource(R.drawable.my_icon_setting);
-					tv4.setTextColor(Color.parseColor("#cccccc"));
-					imgbtn4.setBackgroundResource(R.drawable.menu_arrow);
-				}
-
-				return false;
-			}
-		});
 		rl4.setOnClickListener(new View.OnClickListener() {
 
 			@Override

@@ -13,7 +13,7 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
-        android:background="@drawable/menu_left"
+        android:background="@drawable/menu_left_touch"
         android:scaleType="fitXY" />
 
     <ImageButton
@@ -23,7 +23,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/menu_left"
         android:layout_marginRight="17dp"
-        android:background="@drawable/menu_right" />
+        android:background="@drawable/menu_right_touch" />
 
     <ImageButton
         android:id="@+id/search"
@@ -32,7 +32,7 @@
         android:layout_alignTop="@+id/menu_right"
         android:layout_marginRight="2dp"
         android:layout_toLeftOf="@+id/menu_right"
-        android:background="@drawable/search" />
+        android:background="@drawable/menu_search" />
 
     <LinearLayout
         android:id="@+id/linearlayout"
@@ -49,16 +49,18 @@
             android:layout_marginTop="10dp"
             android:focusable="true"
             android:gravity="center_vertical"
-            android:textColor="#D0D0D0"
-            android:textSize="19dp" />
+            android:textSize="19dp" 
+            android:duplicateParentState="true"
+            android:textColor="@drawable/title_text"/>
 
         <ImageButton
             android:id="@+id/more"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/filter_arrow"
-            android:focusable="true" />
+            android:focusable="true" 
+            android:duplicateParentState="true"
+            android:background="@drawable/title_more"/>
     </LinearLayout>
 
 </RelativeLayout>

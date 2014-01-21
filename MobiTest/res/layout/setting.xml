@@ -58,7 +58,8 @@
                 android:layout_marginBottom="11dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="11dp"
-                android:background="@drawable/menu_arrow" />
+                android:background="@drawable/arrow"
+                android:duplicateParentState="true" />
         </LinearLayout>
 
         <TextView
@@ -73,10 +74,10 @@
             android:textSize="15sp" />
 
         <LinearLayout
+            android:id="@+id/Linear2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" 
-            android:id="@+id/Linear2">
+            android:background="#303233" >
 
             <TextView
                 android:id="@+id/textView5"
@@ -91,14 +92,14 @@
                 android:textColor="#cccccc"
                 android:textSize="17sp" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/checkbox1"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="17dp"
                 android:layout_marginTop="9dp"
-                android:background="@drawable/set_chkbox" />
+                android:src="@drawable/set_chkbox" />
         </LinearLayout>
 
         <TextView
@@ -114,10 +115,10 @@
             android:textSize="15sp" />
 
         <LinearLayout
+            android:id="@+id/Linear3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" 
-            android:id="@+id/Linear3">
+            android:background="#303233" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -147,7 +148,7 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/checkbox2"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
@@ -155,7 +156,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/set_chkbox" />
+                android:src="@drawable/set_chkbox" />
         </LinearLayout>
 
         <ImageView
@@ -167,10 +168,10 @@
             android:src="@drawable/list_line" />
 
         <LinearLayout
+            android:id="@+id/Linear4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233"
-            android:id="@+id/Linear4" >
+            android:background="#303233" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -200,7 +201,7 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/checkbox3"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
@@ -208,7 +209,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="17dp"
                 android:layout_marginTop="18dp"
-                android:background="@drawable/set_chkbox" />
+                android:src="@drawable/set_chkbox" />
         </LinearLayout>
 
         <ImageView
@@ -220,10 +221,10 @@
             android:src="@drawable/list_line" />
 
         <LinearLayout
+            android:id="@+id/Linear5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233"
-            android:id="@+id/Linear5" >
+            android:background="#303233" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -251,7 +252,8 @@
                     android:textColor="#888888"
                     android:textSize="13sp" />
             </LinearLayout>
-		 <ImageButton
+
+            <ImageView
                 android:id="@+id/checkbox4"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
@@ -259,8 +261,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="17dp"
                 android:layout_marginTop="18dp"
-                android:background="@drawable/set_chkbox" />
-            
+                android:src="@drawable/set_chkbox" />
         </LinearLayout>
 
         <TextView
@@ -276,10 +277,10 @@
             android:textSize="15sp" />
 
         <LinearLayout
+            android:id="@+id/Linear6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233"
-            android:id="@+id/Linear6" >
+            android:background="#303233" >
 
             <TextView
                 android:id="@+id/textView15"
@@ -302,7 +303,8 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/menu_arrow" />
+                android:background="@drawable/arrow"
+                android:duplicateParentState="true" />
         </LinearLayout>
 
         <ImageView
@@ -314,10 +316,10 @@
             android:src="@drawable/list_line" />
 
         <LinearLayout
+            android:id="@+id/Linear7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233"
-            android:id="@+id/Linear7" >
+            android:background="#303233" >
 
             <TextView
                 android:id="@+id/textView14"
@@ -340,7 +342,8 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/menu_arrow" />
+                android:background="@drawable/arrow"
+                android:duplicateParentState="true" />
         </LinearLayout>
 
         <ImageView
@@ -352,10 +355,10 @@
             android:src="@drawable/list_line" />
 
         <LinearLayout
+            android:id="@+id/Linear8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233" 
-            android:id="@+id/Linear8">
+            android:background="#303233" >
 
             <TextView
                 android:id="@+id/textView16"
@@ -378,7 +381,8 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/menu_arrow" />
+                android:background="@drawable/arrow"
+                android:duplicateParentState="true" />
         </LinearLayout>
 
         <TextView
@@ -394,10 +398,10 @@
             android:textSize="15sp" />
 
         <LinearLayout
+            android:id="@+id/Linear9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#303233"
-            android:id="@+id/Linear9" >
+            android:background="#303233" >
 
             <TextView
                 android:id="@+id/textView18"
@@ -430,7 +434,8 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/menu_arrow" />
+                android:background="@drawable/arrow"
+                android:duplicateParentState="true" />
         </LinearLayout>
     </LinearLayout>
 
