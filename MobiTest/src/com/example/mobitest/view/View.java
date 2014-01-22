@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -25,6 +26,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mobitest.Network;
 import com.example.mobitest.R;
 import com.example.mobitest.login.Login;
 
@@ -39,7 +41,7 @@ public class View extends Activity{
 	RelativeLayout rl_img;
 	Button button1, button2, button3, button4;
 
-
+	Network nw = new Network();
 	Login lg = new Login();
 
 	String webtoonJSON;
@@ -47,6 +49,8 @@ public class View extends Activity{
 	String toon_nickname;
 	String rating_avg;
 
+	Typeface typeface;
+	
 	JsonParsingHelper parser = new JsonParsingHelper();
 
 	private boolean imgpressed = false;
@@ -119,11 +123,15 @@ public class View extends Activity{
 		bottom = (ImageView)findViewById(R.id.bottom);
 		Title = (TextView)findViewById(R.id.textView1);
 		Title.setText(toon_title);
+		typeface = nw.typeface;
+		Title.setTypeface(typeface);
+		
 		NickName = (TextView)findViewById(R.id.textView3);
 		NickName.setText(toon_nickname);
+		NickName.setTypeface(typeface);
 		RatingAvg = (TextView)findViewById(R.id.textView2);
 		RatingAvg.setText(Avg);
-
+		RatingAvg.setTypeface(typeface);
 		backBtn = (ImageButton)findViewById(R.id.backBtn);
 
 		backBtn.setOnClickListener(new OnClickListener() {
@@ -178,7 +186,7 @@ public class View extends Activity{
 				}if(event.getAction()==MotionEvent.ACTION_UP){
 					toon_info.setImageResource(R.drawable.toon_info);
 					button1.setTextColor(Color.parseColor("#d6d6d6"));
-					button1.setBackgroundColor(Color.parseColor("#28292a"));
+					button1.setBackgroundColor(Color.parseColor("#202020"));
 				}
 
 				return false;
@@ -197,7 +205,7 @@ public class View extends Activity{
 				}if(event.getAction()==MotionEvent.ACTION_UP){
 					first_chap.setImageResource(R.drawable.first_chap);
 					button2.setTextColor(Color.parseColor("#d6d6d6"));
-					button2.setBackgroundColor(Color.parseColor("#28292a"));
+					button2.setBackgroundColor(Color.parseColor("#202020"));
 				}
 				return false;
 			}
@@ -214,7 +222,7 @@ public class View extends Activity{
 				}if(event.getAction()==MotionEvent.ACTION_UP){
 					download.setImageResource(R.drawable.download);
 					button3.setTextColor(Color.parseColor("#d6d6d6"));
-					button3.setBackgroundColor(Color.parseColor("#28292a"));
+					button3.setBackgroundColor(Color.parseColor("#202020"));
 				}
 				return false;
 			}
@@ -232,7 +240,7 @@ public class View extends Activity{
 				}if(event.getAction()==MotionEvent.ACTION_UP){
 					gift.setImageResource(R.drawable.gift);
 					button4.setTextColor(Color.parseColor("#d6d6d6"));
-					button4.setBackgroundColor(Color.parseColor("#28292a"));
+					button4.setBackgroundColor(Color.parseColor("#202020"));
 				}
 
 
@@ -253,7 +261,7 @@ public class View extends Activity{
 			@Override
 			public void onClick(android.view.View v) {
 				listView.setSelection(listView.getHeight());
-
+				
 			}
 		});
 

@@ -55,7 +55,7 @@ public class Main_genre extends Activity{
 
 	String webtoonJSON;
 	JSONArray JsonArray = null;
-	JsonParsingHelper2 parser = new JsonParsingHelper2();
+	JsonParsingHelper parser = new JsonParsingHelper();
 
 	AlertDialog alertDialogStores;
 
@@ -79,12 +79,11 @@ public class Main_genre extends Activity{
 		search = (ImageButton)findViewById(R.id.search);
 		menuRight = (ImageButton)findViewById(R.id.menu_right);
 		menuLeft = (ImageButton)findViewById(R.id.menu_left);
-		title = (TextView)findViewById(R.id.country_title);
+		title = (TextView)findViewById(R.id.main_title);
 		Rightlist = (ListView)findViewById(R.id.rightlist);
 		Leftlist = (ListView)findViewById(R.id.leftlist);
 		webtoonJSON = Utils.jsonToStringFromAssetFolder("file/toons.json", getApplicationContext());
 
-		//new getList().execute();
 		search.setOnTouchListener(new OnTouchListener() {
 
 			@Override
@@ -225,9 +224,8 @@ public class Main_genre extends Activity{
 	void onLeftItemClick(int pos){
 		Leftadapter.selected = pos;
 		Leftadapter.notifyDataSetChanged();
-		
 		try{
-			RightArray = parser.getWebtoons(webtoonJSON, pos);
+			RightArray = parser.getWebtoons(webtoonJSON, pos, JsonParsingHelper.TYPE_GENRE);
 		}catch(JSONException e){
 			
 		}

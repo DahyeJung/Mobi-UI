@@ -23,7 +23,7 @@ import com.example.mobitest.main.Main;
 import com.example.mobitest.notice.Notice;
 
 public class Setting extends Activity{
-	TextView setting;
+	TextView title, tv1, myinformtv, myinformtv2, tv2, rotation, tv3, usetv, usetv2, viewtv, viewtv2, updatetv1, updatetv2, tv4, noticetv, faqtv, proposaltv, tv5, proinfotv, tv6;
 	Typeface typeface;
 	ImageButton backBtn;
 	ImageView myinform, notice, FAQ, propersal, proinform, chk1, chk2, chk3, chk4;
@@ -41,10 +41,50 @@ public class Setting extends Activity{
 
 		Network nw = new Network();
 		typeface = nw.typeface;
-
-		setting = (TextView)findViewById(R.id.setting);
-		setting.setTypeface(typeface);
-
+		
+		title = (TextView)findViewById(R.id.setting_title);
+		title.setTypeface(typeface);
+		tv1 = (TextView)findViewById(R.id.textView1);
+		tv1.setTypeface(typeface);
+		myinformtv = (TextView)findViewById(R.id.textView2);
+		myinformtv.setTypeface(typeface);
+		myinformtv2 = (TextView)findViewById(R.id.textView3);
+		myinformtv2.setTypeface(typeface);
+		tv2 = (TextView)findViewById(R.id.textView4);
+		tv2.setTypeface(typeface);
+		rotation = (TextView)findViewById(R.id.textView5);
+		rotation.setTypeface(typeface);
+		tv3 = (TextView)findViewById(R.id.textView6);
+		tv3.setTypeface(typeface);
+		usetv = (TextView)findViewById(R.id.textView7);
+		usetv.setTypeface(typeface);
+		usetv2 = (TextView)findViewById(R.id.textView8);
+		usetv2.setTypeface(typeface);
+		viewtv = (TextView)findViewById(R.id.textView9);
+		viewtv.setTypeface(typeface);
+		viewtv2 = (TextView)findViewById(R.id.textView10);
+		viewtv2.setTypeface(typeface);
+		updatetv1 = (TextView)findViewById(R.id.textView11);
+		updatetv1.setTypeface(typeface);
+		updatetv2 = (TextView)findViewById(R.id.textView12);
+		updatetv2.setTypeface(typeface);
+		tv4 = (TextView)findViewById(R.id.textView13);
+		tv4.setTypeface(typeface);
+		noticetv = (TextView)findViewById(R.id.textView15);
+		noticetv.setTypeface(typeface);
+		faqtv = (TextView)findViewById(R.id.textView14);
+		faqtv.setTypeface(typeface);
+		proposaltv = (TextView)findViewById(R.id.textView16);
+		proposaltv.setTypeface(typeface);
+		tv5 = (TextView)findViewById(R.id.textView17);
+		tv5.setTypeface(typeface);
+		proinfotv = (TextView)findViewById(R.id.textView18);
+		proinfotv.setTypeface(typeface);
+		tv6 = (TextView)findViewById(R.id.textView19);
+		tv6.setTypeface(typeface);
+		
+		
+		
 		backBtn = (ImageButton)findViewById(R.id.backBtn);
 		myinform = (ImageButton)findViewById(R.id.imageView1);
 		notice = (ImageButton)findViewById(R.id.imageView6);

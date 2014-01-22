@@ -8,29 +8,22 @@ import java.util.Comparator;
 import org.json.JSONArray;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.sax.StartElementListener;
-import android.util.Log;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
+import com.example.mobitest.Network;
 import com.example.mobitest.R;
 import com.example.mobitest.login.Login;
-import com.example.mobitest.view.ViewListAdapter;
 
 public class MainRightListAdapter extends ArrayAdapter<Category>{
 
@@ -46,7 +39,9 @@ public class MainRightListAdapter extends ArrayAdapter<Category>{
 	RelativeLayout rl_img;
 
 	Login lg = new Login();
-
+	Network nw = new Network();
+	
+	Typeface typeface;
 	String friendsJSON;
 	JSONArray JsonArray = null;
 	JsonParsingHelper parser = new JsonParsingHelper();
@@ -131,11 +126,6 @@ public class MainRightListAdapter extends ArrayAdapter<Category>{
 
 		toonNickname = (TextView)v.findViewById(R.id.right_nickname);
 		toonTitle = (TextView)v.findViewById(R.id.right_title);	
-		/*toonAgelimit = (TextView)v.findViewById(R.id.right_age_limit);
-		    toonDaysOfWeek = (TextView)v.findViewById(R.id.right_days_of_week);
-			toonGenreMain = (TextView)v.findViewById(R.id.right_genre_main);
-			toonGenreSub = (TextView)v.findViewById(R.id.right_genre_sub);
-			toonIsFamous = (TextView)v.findViewById(R.id.right_is_famous);*/
 		toonRatingAvg = (TextView)v.findViewById(R.id.right_rating_avg);
 		toonPublishingDate = (TextView)v.findViewById(R.id.right_publishing_date);
 		adult = (ImageView)v.findViewById(R.id.adult);
@@ -143,12 +133,14 @@ public class MainRightListAdapter extends ArrayAdapter<Category>{
 		rl_img = (RelativeLayout)v.findViewById(R.id.img);
 		rate = (ImageView)v.findViewById(R.id.rate_img);
 
+		typeface = nw.typeface;
+		
+		toonNickname.setTypeface(typeface);
+		toonTitle.setTypeface(typeface);
+		toonPublishingDate.setTypeface(typeface);
+		
 		adult.setVisibility(View.INVISIBLE);
 		isfamous.setVisibility(View.INVISIBLE);
-
-		//		ImageView ivBorder = ((ImageView)v.findViewById(R.id.border));
-		//		ivBorder.setImageDrawable(new ColorDrawable(0xFF0000FF));
-		//		ivBorder.setVisibility(View.VISIBLE);
 
 		String agelimit = items.get(position).getAgeLimit();
 		int int_agelimit = Integer.parseInt(agelimit);
@@ -214,11 +206,6 @@ public class MainRightListAdapter extends ArrayAdapter<Category>{
 
 		toonNickname.setText(items.get(position).getNickname());
 		toonTitle.setText(items.get(position).getToonTitle());
-		/*toonAgelimit.setText(Rightlist.get(position).getAgeLimit());
-		toonDaysOfWeek.setText(Rightlist.get(position).getDaysOfWeek());
-		toonGenreMain.setText(Rightlist.get(position).getGenreMain());
-		toonGenreSub.setText(Rightlist.get(position).getGenreSub());
-		toonIsFamous.setText(Rightlist.get(position).getIsFamous());*/
 		toonRatingAvg.setText(Avg);
 		toonPublishingDate.setText(items.get(position).getPublishingDate());
 		return v;

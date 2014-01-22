@@ -17,7 +17,7 @@
         <RelativeLayout
             android:id="@+id/imageView1"
             android:layout_width="113dp"
-            android:layout_height="78dp"
+            android:layout_height="72dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY" >
         </RelativeLayout>
@@ -52,7 +52,7 @@
             android:layout_alignLeft="@+id/textView1"
             android:layout_below="@+id/textView2"
             android:layout_marginBottom="7dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="13dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             android:src="@drawable/rate_9" />
@@ -63,11 +63,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView2"
             android:layout_marginLeft="3dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/imageView2"
             android:text="9.6"
             android:textColor="#51CAE1"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/imageButton1"

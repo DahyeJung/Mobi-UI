@@ -13,10 +13,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -55,12 +53,12 @@ public class Main_my extends Activity{
 
 	String webtoonJSON;
 	JSONArray JsonArray = null;
-	JsonParsingHelper3 parser = new JsonParsingHelper3();
+	JsonParsingHelper parser = new JsonParsingHelper();
 
 	AlertDialog alertDialogStores;
 
 	int sortMethod = MainRightListAdapter.METHOD_BY_UPDATE;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -73,49 +71,21 @@ public class Main_my extends Activity{
 		MainArray.add("업데이트순");
 		MainArray.add("조회순");
 		MainArray.add("별점순");
-		
+
 		search = (ImageButton)findViewById(R.id.search);
 		menuRight = (ImageButton)findViewById(R.id.menu_right);
 		menuLeft = (ImageButton)findViewById(R.id.menu_left);
-		title = (TextView)findViewById(R.id.country_title);
+		title = (TextView)findViewById(R.id.main_title);
 		Rightlist = (ListView)findViewById(R.id.rightlist);
 		Leftlist = (ListView)findViewById(R.id.leftlist);
 		webtoonJSON = Utils.jsonToStringFromAssetFolder("file/toons.json", getApplicationContext());
 
-		//new getList().execute();
-		search.setOnTouchListener(new OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					search.setBackgroundResource(R.drawable.search_over);
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					search.setBackgroundResource(R.drawable.search);//버튼을 누르지 않을 때
-				}
-				return false;
-			}
-		});
-
-		menuRight.setOnTouchListener(new OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
-					menuRight.setBackgroundResource(R.drawable.menu_right_over);
-				}if(event.getAction()==MotionEvent.ACTION_UP){
-					menuRight.setBackgroundResource(R.drawable.menu_right_touch);//버튼을 누르지 않을 때
-				}
-
-				return false;
-			}
-		});
 		menuRight.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Main_my.this,Account.class);
-//				intent.putExtra("main_my", "main_my");
+				//				intent.putExtra("main_my", "main_my");
 				startActivity(intent);
 			}
 		});
@@ -143,19 +113,10 @@ public class Main_my extends Activity{
 			}
 		});
 
-
 		//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-		
-		if(LeftArray!=null){
-			LeftArray.clear();
-		}
-		
+
 		LeftArray = new ArrayList<ListData>();
-		
-		if(LeftArray.size()!=0){
-			LeftArray.clear();
-		}
-		
+
 		Leftdata = new ListData("관심");
 		LeftArray.add(Leftdata);
 		Leftdata = new ListData("최근");
@@ -163,21 +124,22 @@ public class Main_my extends Activity{
 		Leftdata = new ListData("저장");
 		LeftArray.add(Leftdata);
 
-		
+
 		Leftadapter = new MainLeftListAdapter(this, android.R.layout.simple_list_item_1, LeftArray, MainLeftListAdapter.TYPE_MY);
 		Leftlist.setAdapter(Leftadapter);
 		Leftlist.setOnItemClickListener(itemClickListenerofDaysOfWeek);
 		Leftlist.setCacheColorHint(0x00000000);
 		Leftlist.setSelector(new ColorDrawable(Color.TRANSPARENT));
 		Leftlist.setDivider(null);
-		
+
 		try {
-			RightArray = parser.getWebtoons(webtoonJSON);
+			RightArray = parser.getWebtoons(webtoonJSON, 0, JsonParsingHelper.TYPE_MY);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+
 		}
-		ddd();
+		RightadapterSetting();
 		Rightadapter.notifyDataSetChanged();
 		Rightadapter.sortBy(MainRightListAdapter.METHOD_BY_UPDATE);
 		Rightlist.setAdapter(Rightadapter);
@@ -212,57 +174,39 @@ public class Main_my extends Activity{
 		public void onItemClick(AdapterView<?> adapterView, View clickedView, int pos,
 				long id) {
 
-			Leftadapter.selected = pos;
-			Leftadapter.notifyDataSetChanged();
+			onLeftItemClick(pos);
 
-			for(int i=0; i<adapterView.getChildCount(); i++) {
-				View child = adapterView.getChildAt(i);
-				ImageView leftArrow = (ImageView) child.findViewById(R.id.left_arrow);
-				if(i==pos) {
-					leftArrow.setVisibility(View.VISIBLE);
-					//TextView.settextColor
-				}
-				else {
-					leftArrow.setVisibility(View.INVISIBLE);
-				}
-			}
-			if(pos == 0){
-				try {
-					RightArray = parser.getWebtoons(webtoonJSON);
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				ddd();
-				Rightadapter.notifyDataSetChanged();
-				Rightlist.setAdapter(Rightadapter);
-
-			}else if(pos == 1){
-				//				RightArray.clear();
-				RightArray.clear();
-				ddd();
-				Rightadapter.notifyDataSetChanged();
-				Rightlist.setAdapter(Rightadapter);
-				Toast toast = Toast.makeText(Main_my.this, "해당 작품이 없습니다.", Toast.LENGTH_LONG);
-				toast.show();
-
-
-			}else if(pos == 2){
-				//				RightArray.clear();
-				RightArray.clear();
-				ddd();
-				Rightadapter.notifyDataSetChanged();
-				Rightlist.setAdapter(Rightadapter);
-				Toast.makeText(Main_my.this, "해당 작품이 없습니다.", Toast.LENGTH_LONG).show();
-			}
 		}
 	};
 
-	public void ddd(){
+	void onLeftItemClick(int pos){
+
+		Leftadapter.selected = pos;
+		Leftadapter.notifyDataSetChanged();
+
+		if(pos == 0){
+			try {
+				RightArray = parser.getWebtoons(webtoonJSON, 0, JsonParsingHelper.TYPE_MY);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+			}
+
+			RightadapterSetting();
+			Rightlist.setAdapter(Rightadapter);
+
+		}else {
+			RightArray.clear();
+			RightadapterSetting();
+			Rightlist.setAdapter(Rightadapter);
+			Toast.makeText(Main_my.this, "해당 작품이 없습니다.", Toast.LENGTH_LONG).show();
+		}
+
+	}//onLeftItemClick
+
+	public void RightadapterSetting(){
 		Rightadapter = new MainRightListAdapter(this, android.R.layout.simple_list_item_1, RightArray);
 		onTitleClick(sortMethod);
 	}
-
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -302,7 +246,7 @@ public class Main_my extends Activity{
 	}
 
 	public void showPopUp(){
-		
+
 		adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,MainArray);
 
 		ListView listViewItems = new ListView(this);
@@ -314,7 +258,7 @@ public class Main_my extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int pos,
 					long arg3) {
-				
+
 				onTitleClick(pos);
 				sortMethod = pos;
 				alertDialogStores.dismiss();
@@ -323,7 +267,7 @@ public class Main_my extends Activity{
 
 		alertDialogStores = new AlertDialog.Builder(Main_my.this).setView(listViewItems).show();
 	}
-	
+
 	void onTitleClick(int pos){
 
 		switch (pos) {

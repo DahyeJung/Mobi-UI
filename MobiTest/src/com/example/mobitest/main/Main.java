@@ -11,11 +11,11 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -54,7 +54,8 @@ public class Main extends Activity {
 	LinearLayout title_linear;
 
 	Login lg = new Login();
-
+	
+	Typeface typeface;
 	String webtoonJSON;
 	JSONArray JsonArray = null;
 	JsonParsingHelper parser = new JsonParsingHelper();
@@ -69,8 +70,6 @@ public class Main extends Activity {
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.main_list);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.main_title);
-
-		
 		
 		MainArray = new ArrayList<String>();
 		MainArray.add("업데이트순");
@@ -80,7 +79,8 @@ public class Main extends Activity {
 		search = (ImageButton)findViewById(R.id.search);
 		menuRight = (ImageButton)findViewById(R.id.menu_right);
 		menuLeft = (ImageButton)findViewById(R.id.menu_left);
-		title = (TextView)findViewById(R.id.country_title);
+		title = (TextView)findViewById(R.id.main_title);
+		title.setTypeface(typeface);
 		Rightlist = (ListView)findViewById(R.id.rightlist);
 		Leftlist = (ListView)findViewById(R.id.leftlist);
 		more = (ImageButton)findViewById(R.id.more);
@@ -114,13 +114,7 @@ public class Main extends Activity {
 			}
 		});
 		
-		
-		
 		LeftArray = new ArrayList<ListData>();
-		
-		if(LeftArray.size()!=0){
-			LeftArray.clear();
-		}
 		
 		Leftdata = new ListData("월");
 		LeftArray.add(Leftdata);
@@ -148,7 +142,7 @@ public class Main extends Activity {
 			break;
 
 		default:
-			dayOfWeek -= 1;
+			dayOfWeek -= 3;
 			break;
 		}
 		
@@ -179,7 +173,6 @@ public class Main extends Activity {
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 			Intent intent = new Intent(Main.this, com.example.mobitest.view.View.class);
-
 			intent.putExtra("title",RightArray.get(position).getToonTitle()); 
 			intent.putExtra("nickname", RightArray.get(position).getNickname());
 			intent.putExtra("rating_avg", RightArray.get(position).getRatingAvg());
@@ -202,7 +195,6 @@ public class Main extends Activity {
 	 * Leftlistview item click
 	 * 
 	 */
-
 	void onLeftItemClick(int pos) {
 		Log.d("leftlist", Leftadapter.getCount() + "****");
 
@@ -210,7 +202,7 @@ public class Main extends Activity {
 		Leftadapter.notifyDataSetChanged();
 
 		try {
-			RightArray = parser.getWebtoons(webtoonJSON, pos);
+			RightArray = parser.getWebtoons(webtoonJSON, pos, JsonParsingHelper.TYPE_DAY);
 
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -266,7 +258,6 @@ public class Main extends Activity {
 		AlertDialog dialog = builder.create();
 		return dialog;
 	}
-
 	/**
 	 * 메인화면 타이틀을 눌렀을 때
 	 */
@@ -288,7 +279,6 @@ public class Main extends Activity {
 				alertDialogStores.dismiss();
 			}
 		});
-
 		alertDialogStores = new AlertDialog.Builder(Main.this).setView(listViewItems).show();
 
 	}

@@ -3,6 +3,7 @@ package com.example.mobitest.account;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -16,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mobitest.Network;
 import com.example.mobitest.R;
 import com.example.mobitest.main.Main;
 import com.example.mobitest.setting.Setting;
@@ -24,10 +26,12 @@ public class Account extends Activity{
 
 	RelativeLayout rl1, rl2, rl3, rl4;
 	ImageView img1, img2, img3, img4;
-	TextView tv1, tv2, tv3, tv4;
+	TextView tv1, tv2, tv3, tv4, title;
 	ImageButton imgbtn1, imgbtn2, imgbtn3, imgbtn4, backBtn;
 	String intenttxt;
 
+	Network nw = new Network();
+	Typeface typeface;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
@@ -37,7 +41,8 @@ public class Account extends Activity{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.account);
-
+		typeface = nw.typeface;
+		
 		rl1 = (RelativeLayout)findViewById(R.id.rl1);
 		rl2 = (RelativeLayout)findViewById(R.id.rl2);
 		rl3 = (RelativeLayout)findViewById(R.id.rl3);
@@ -47,15 +52,22 @@ public class Account extends Activity{
 		img3 = (ImageView)findViewById(R.id.imageView5);
 		img4 = (ImageView)findViewById(R.id.imageView7);
 		tv1 = (TextView)findViewById(R.id.textView1);
+		tv1.setTypeface(typeface);
 		tv2 = (TextView)findViewById(R.id.textView3);
+		tv2.setTypeface(typeface);
 		tv3 = (TextView)findViewById(R.id.textView4);
+		tv3.setTypeface(typeface);
 		tv4 = (TextView)findViewById(R.id.textView5);
+		tv4.setTypeface(typeface);
+		
 		imgbtn1 = (ImageButton)findViewById(R.id.imageButton);
 		imgbtn2 = (ImageButton)findViewById(R.id.imageButton2);
 		imgbtn3 = (ImageButton)findViewById(R.id.imageButton3);
 		imgbtn4 = (ImageButton)findViewById(R.id.imageButton4);
 		backBtn = (ImageButton)findViewById(R.id.backBtn);
-
+		title = (TextView)findViewById(R.id.account_title);
+		title.setTypeface(typeface);
+		
 		backBtn.setOnClickListener(new OnClickListener() {
 
 			@Override

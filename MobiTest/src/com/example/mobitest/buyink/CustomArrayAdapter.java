@@ -31,13 +31,10 @@ public class CustomArrayAdapter extends ArrayAdapter<String>{
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {     
-        //---print the index of the row to examine---
-        Log.d("CustomArrayAdapter",String.valueOf(position));
 
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView= inflater.inflate(R.layout.buy_goldink, null, true);
 
-        //---get a reference to all the views on the xml layout---
         TextView txtTitle = (TextView) rowView.findViewById(R.id.tv1); 
         TextView txtDescription = (TextView) rowView.findViewById(R.id.tv3); 
         TextView ddd = (TextView)rowView.findViewById(R.id.price);

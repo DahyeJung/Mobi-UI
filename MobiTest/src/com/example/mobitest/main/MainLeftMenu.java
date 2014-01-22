@@ -3,6 +3,7 @@ package com.example.mobitest.main;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.mobitest.Network;
 import com.example.mobitest.R;
 
 public class MainLeftMenu extends Activity{
@@ -20,7 +22,10 @@ public class MainLeftMenu extends Activity{
 	RelativeLayout rl1, rl2, rl3;
 	ImageView icon_date, icon_genre, icon_my, menu_arrow1, menu_arrow2, menu_arrow3;
 	TextView date, genre, my;
-
+	
+	Network nw = new Network();
+	
+	Typeface typeface;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -40,6 +45,12 @@ public class MainLeftMenu extends Activity{
 		date = (TextView)findViewById(R.id.textView1);
 		genre = (TextView)findViewById(R.id.textView2);
 		my = (TextView)findViewById(R.id.textView3);
+		
+		typeface = nw.typeface;
+		date.setTypeface(typeface);
+		genre.setTypeface(typeface);
+		my.setTypeface(typeface);
+		
 		//요일별 웹툰
 		rl1.setOnClickListener(new View.OnClickListener() {
 

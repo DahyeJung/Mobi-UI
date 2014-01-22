@@ -42,7 +42,7 @@
         android:layout_centerHorizontal="true" >
 
         <TextView
-            android:id="@+id/country_title"
+            android:id="@+id/main_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="14dp"

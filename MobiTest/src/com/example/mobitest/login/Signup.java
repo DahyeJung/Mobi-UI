@@ -42,6 +42,7 @@ public class Signup extends Activity implements OnClickListener{
 		Network nw = new Network();
 		typeface = nw.typeface;
 
+
 		page1 = (RelativeLayout)findViewById(R.id.page1);
 		page2 = (RelativeLayout)findViewById(R.id.page2);
 		page3 = (RelativeLayout)findViewById(R.id.page3);
@@ -238,10 +239,10 @@ public class Signup extends Activity implements OnClickListener{
 				return false;
 			}
 		});
-		
+
 		//인증메일 재발송
 		p3_mail.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				p3_tv1.setVisibility(View.INVISIBLE);
@@ -253,7 +254,7 @@ public class Signup extends Activity implements OnClickListener{
 			}
 		});
 		p3_mail.setOnTouchListener(new OnTouchListener() {
-			
+
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
@@ -261,14 +262,14 @@ public class Signup extends Activity implements OnClickListener{
 				}if(event.getAction()==MotionEvent.ACTION_UP){
 					p3_mail.setBackgroundResource(R.drawable.login_btn_bg);//버튼을 누르지 않을 때
 				}
-				
+
 				return false;
 			}
 		});
-		
+
 		//로그인 버튼
 		p3_login.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Signup.this,Login.class);
@@ -276,7 +277,7 @@ public class Signup extends Activity implements OnClickListener{
 			}
 		});
 		p3_login.setOnTouchListener(new OnTouchListener() {
-			
+
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if(event.getAction()==MotionEvent.ACTION_DOWN){//버튼을 누르고 있을 때
@@ -284,15 +285,15 @@ public class Signup extends Activity implements OnClickListener{
 				}if(event.getAction()==MotionEvent.ACTION_UP){
 					p3_login.setBackgroundResource(R.drawable.login_btn_bg);//버튼을 누르지 않을 때
 				}
-				
-				
-				
+
+
+
 				return false;
 			}
 		});
-		
-		
-		
+
+
+
 	}//onCreate
 
 	//성별 버튼 

@@ -39,8 +39,8 @@ public class MainLeftListAdapter_OLD extends ArrayAdapter<ListData>{
 		if(v==null){
 			LayoutInflater vi = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			v = vi.inflate(R.layout.main_left, null);
-			v2 = vi.inflate(R.layout.main_left_genre, null);
-			v3 = vi.inflate(R.layout.main_left_my, null);
+//			v2 = vi.inflate(R.layout.main_left_genre, null);
+//			v3 = vi.inflate(R.layout.main_left_my, null);
 		}
 		ListData listdata = items.get(position);
 

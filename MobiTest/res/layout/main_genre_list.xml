@@ -13,14 +13,14 @@
         android:background="#28292a" >
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/main_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
-            android:layout_marginLeft="17dp"
+             android:layout_marginLeft="21dp"
             android:layout_marginRight="17dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/main_icon_genre" />
+            android:src="@drawable/menu_icon_genre" />
     </RelativeLayout>
 
     <RelativeLayout

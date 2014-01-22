@@ -25,7 +25,6 @@ public class Network extends Activity{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.network);
-	
 		typeface = Typeface.createFromAsset(getAssets(),"fonts/NanumGothicBold.ttf.mp3");
 		typeface2 = Typeface.createFromAsset(getAssets(),"fonts/NanumGothic.ttf.mp3");
 		

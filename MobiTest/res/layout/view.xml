@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="#000000">
 
     <RelativeLayout
         android:id="@+id/Relativelayout1"
@@ -25,11 +26,10 @@
             android:layout_height="32dp"
             android:layout_above="@+id/bottom"
             android:layout_alignLeft="@+id/bottom"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="225dp"
             android:background="@drawable/listview_top_btn"
-            android:layout_centerHorizontal="true"
             android:scaleType="fitXY" />
-
     </RelativeLayout>
 
     <ImageView
@@ -45,7 +45,7 @@
         android:layout_height="45dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/imageView1"
-        android:background="#28292a"
+        android:background="#202020"
         android:paddingLeft="20dp"
         android:text="작품소개"
         android:textColor="#D6D6D6"
@@ -57,8 +57,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button2"
         android:layout_toRightOf="@+id/Relativelayout1"
-        android:dividerHeight="0px" 
-        android:focusable="false">
+        android:dividerHeight="0px"
+        android:focusable="false" >
     </ListView>
 
     <Button
@@ -67,7 +67,7 @@
         android:layout_height="45dp"
         android:layout_alignBottom="@+id/button1"
         android:layout_toRightOf="@+id/button1"
-        android:background="#28292a"
+        android:background="#202020"
         android:paddingLeft="20dp"
         android:text="첫회보기"
         android:textColor="#D6D6D6"
@@ -89,7 +89,7 @@
         android:layout_height="45dp"
         android:layout_above="@+id/listview"
         android:layout_toRightOf="@+id/button2"
-        android:background="#28292a"
+        android:background="#202020"
         android:paddingLeft="20dp"
         android:text="임시저장"
         android:textColor="#D6D6D6"
@@ -101,7 +101,7 @@
         android:layout_height="45dp"
         android:layout_above="@+id/listview"
         android:layout_toRightOf="@+id/button3"
-        android:background="#28292a"
+        android:background="#202020"
         android:paddingLeft="20dp"
         android:text="선물하기"
         android:textColor="#D6D6D6"

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.mobitest.Network;
 import com.example.mobitest.R;
 
 public class ViewListAdapter extends ArrayAdapter<Category>{
@@ -24,7 +26,9 @@ public class ViewListAdapter extends ArrayAdapter<Category>{
 	ImageView img_rating_avg, bg_ink_bg_blue, tag_ink, tag_download, tag_gift;
 	RelativeLayout img;
 	
-
+	Network nw = new Network();
+	
+	Typeface typeface;
 	private boolean imgpressed = false;
 
 	View v = null;
@@ -44,16 +48,20 @@ public class ViewListAdapter extends ArrayAdapter<Category>{
 		//View v = null;
 		LayoutInflater l = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		v = l.inflate(R.layout.view_contents, null);
-
+		typeface = nw.typeface;
+		
 		tag_download = (ImageView)v.findViewById(R.id.imageButton2);
 		tag_gift = (ImageView)v.findViewById(R.id.imageButton3);
 
 		webtoon_title = (TextView)v.findViewById(R.id.textView1);
+		webtoon_title.setTypeface(typeface);
 		date = (TextView)v.findViewById(R.id.textView2);
+		date.setTypeface(typeface);
 		rating_avg = (TextView)v.findViewById(R.id.textView3);
 		img_rating_avg = (ImageView)v.findViewById(R.id.imageView2);
 		img = (RelativeLayout)v.findViewById(R.id.imageView1);
 		view_cost = (TextView)v.findViewById(R.id.textView4);
+		view_cost.setTypeface(typeface);
 		tag_ink = (ImageView)v.findViewById(R.id.imageView3);
 		String ratingavg = items.get(position).getRating_avg();
 		double double_ratingavg = Double.valueOf(ratingavg).doubleValue();

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mobitest.Network;
 import com.example.mobitest.R;
 
 public class MainLeftListAdapter extends ArrayAdapter<ListData>{
@@ -24,7 +26,9 @@ public class MainLeftListAdapter extends ArrayAdapter<ListData>{
 	public static final int TYPE_GENRE = 1;
 	public static final int TYPE_MY = 2;
 
+	Network nw = new Network();
 
+	Typeface typeface;
 	public MainLeftListAdapter(Context context, int textViewResourceId, ArrayList<ListData> items, int type) {
 		super(context, textViewResourceId, items);
 		this.items = items;
@@ -34,10 +38,13 @@ public class MainLeftListAdapter extends ArrayAdapter<ListData>{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View v = convertView;
+		typeface = nw.typeface;
+		
 		if(v==null){
 			LayoutInflater vi = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-			switch (type) {
+			v = vi.inflate(R.layout.main_left, null);
+			
+			/*switch (type) {
 			case TYPE_DAY:
 				v = vi.inflate(R.layout.main_left, null);
 				break;
@@ -53,12 +60,16 @@ public class MainLeftListAdapter extends ArrayAdapter<ListData>{
 
 			default:
 				break;
-			}
+			}*/
 		}
 		ListData listdata = items.get(position);
 
 		TextView lefttv = (TextView)v.findViewById(R.id.left_text);
+		
+		lefttv.setTypeface(typeface);
+		
 		ImageView leftArrow = (ImageView) v.findViewById(R.id.left_arrow);
+		
 		if(listdata != null){
 			lefttv.setText(listdata.getDay());
 		}
